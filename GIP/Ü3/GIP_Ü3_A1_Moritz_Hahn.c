@@ -6,19 +6,19 @@ int main(void){
     char ans3;
     int ans4;
     char ans5;
-    printf("what is pi (round on 3 decimalplaces and youse point as comma)?");
+    printf("what is pi (round on 3 decimalplaces and youse point as comma)? ");
     scanf(" %f",&ans1);
     fflush(stdin);
-    printf("what is 5+4?");
+    printf("what is 5+4? ");
     scanf(" %d",&ans2);
     fflush(stdin);
-    printf("what is the second letter in the alphabet?");
+    printf("what is the second letter in the alphabet? ");
     scanf(" %c",&ans3);
     fflush(stdin);
-    printf("what is the squareroot of '4'?");
+    printf("what is the squareroot of '4'? ");
     scanf(" %d",&ans4);
     fflush(stdin);
-    printf("what is the first letter of the Mc'Donalds logo?");
+    printf("what is the first letter of the Mc'Donalds logo? ");
     scanf(" %c",&ans5);
     fflush(stdin);
 
