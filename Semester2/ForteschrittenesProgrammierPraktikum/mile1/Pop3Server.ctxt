@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Pop3Server
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=int\ getNumMessages()
+comment3.params=messageNum
+comment3.target=int\ getMessageSize(int)
+comment4.params=messageNum
+comment4.target=java.lang.String\ getMessage(int)
+numComments=5

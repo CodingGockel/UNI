@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Airport
+comment1.params=maxFlights
+comment1.target=Airport(int)
+comment2.params=flight
+comment2.target=void\ addNewFLight(Flight)
+comment3.params=flightNumber
+comment3.target=void\ removeFlight(int)
+comment4.params=
+comment4.target=void\ listDeparturesOnScreen()
+comment5.params=
+comment5.target=void\ listArrivalsOnScreen()
+numComments=6
