@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Einwohner
+comment1.params=
+comment1.target=Einwohner()
+comment2.params=
+comment2.target=int\ zuVersteuerndesEinkommen()
+comment3.params=
+comment3.target=int\ steuer()
+comment4.params=einkommen
+comment4.target=void\ setEinkommen(int)
+numComments=5

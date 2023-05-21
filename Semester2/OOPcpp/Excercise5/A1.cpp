@@ -10,18 +10,16 @@ struct Node{
 };
 
 void insert(Node *&root, const string &v){
-    if(!(v == root->value)){
-        if(root == nullptr){
-        root = new Node;
-        root->value = v;
-        root->left = nullptr;
-        root->right = nullptr;
+    if(root == nullptr){
+    root = new Node;
+    root->value = v;
+    root->left = nullptr;
+    root->right = nullptr;
+    }else if(v != root->value){
+        if(v < root->value){
+            insert(root->left, v);
         }else{
-            if(v < root->value){
-                insert(root->left, v);
-            }else{
-                insert(root->right, v);
-            }
+            insert(root->right, v);
         }
     }
 }
@@ -29,7 +27,7 @@ void insert(Node *&root, const string &v){
 void list(Node *root){
     if(root != nullptr){
         list(root->left);
-        cout<< root->value << "; ";
+        cout << root->value << "; ";
         list(root->right);
     }
 }
@@ -50,12 +48,10 @@ int main(){
         getline(cin,input);
         if(input == "."){
             break;
-        }else{
-            insert(root, input);
         }
+        insert(root, input);
     }
     list(root);
     free(root);
-
     return 0;
 }

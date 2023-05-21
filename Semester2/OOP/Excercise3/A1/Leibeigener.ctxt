@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Leibeigener
+comment1.params=
+comment1.target=Leibeigener()
+comment2.params=
+comment2.target=int\ zuVersteuerndesEinkommen()
+comment3.params=
+comment3.target=int\ steuer()
+numComments=4
