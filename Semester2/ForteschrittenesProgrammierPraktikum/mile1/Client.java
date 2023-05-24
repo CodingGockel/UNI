@@ -54,7 +54,7 @@ public class Client {
          out.flush();
          response = in.readLine();
          while (!response.equals(".")) {
-            System.out.println(response);
+            System.out.println("Nachrichtennummer: "+response.split(" ")[0]+"\t"+"Größe: "+response.split(" ")[1]);
             response = in.readLine();
          }
          
