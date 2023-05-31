@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Kamera
+comment1.params=a\ b\ c\ h\ beschreibung
+comment1.target=Kamera(int,\ int,\ double,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=void\ print()
+numComments=3

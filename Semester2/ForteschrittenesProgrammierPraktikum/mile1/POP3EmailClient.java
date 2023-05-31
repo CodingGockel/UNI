@@ -30,20 +30,17 @@ public class POP3EmailClient {
                 password = new String(passwordArray);
               }
               try {
-                 // Verbindungseinstellungen konfigurieren
                  Properties properties = new Properties();
                  properties.put("mail.store.protocol", "pop3");
                  properties.put("mail.pop3.host", pop3Server);
-    
-                 // Sitzung erstellen
+
                  Session session = Session.getDefaultInstance(properties);
     
-                 // Store und Ordner für den POP3-Zugriff öffnen
                  Store store = session.getStore("pop3");
                  store.connect(pop3Server, username, password);
                  Folder folder = store.getFolder("INBOX");
                  folder.open(Folder.READ_ONLY);
-                 // Status des Postfachs abrufen
+                 
                  System.out.println("You succsefully Logged in!");
                  while(true){
                     System.out.println("----------------------------------");
@@ -62,7 +59,7 @@ public class POP3EmailClient {
                             System.out.println("Number of messages: " + messages.length);
                             break;
                         case 2:
-                            // Nachrichteninformationen anzeigen
+                           
                             for (int i = 0; i < messages.length; i++) {
                                 Message message = messages[i];
                                 System.out.println("Nachricht #" + (i + 1) + ":");

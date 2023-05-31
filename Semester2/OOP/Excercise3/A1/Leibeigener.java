@@ -1,4 +1,4 @@
-public class Leibeigener extends Bauer
+ public class Leibeigener extends Bauer
 {
     public Leibeigener()
     {

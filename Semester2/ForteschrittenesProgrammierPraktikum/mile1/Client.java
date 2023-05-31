@@ -33,13 +33,13 @@ public class Client {
                 password = new String(passwordArray);
               }
               try {
-                 // Verbindung zum POP3-Server herstellen
+                 
                  Socket socket = new Socket(pop3Server, port);
                  BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                  PrintWriter out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
                  
                  String response;
-                 // Anmeldung mit Benutzername und Passwort
+                
                  out.println("USER " + username);
                  out.flush();
                  response = in.readLine();
@@ -47,7 +47,7 @@ public class Client {
                  out.flush();
                  response = in.readLine();
                  response = in.readLine();
-                 // Status des Postfachs abrufen
+                
                  System.out.println("You succsefully Logged in!");
                  while(true){
                     System.out.println("----------------------------------");
