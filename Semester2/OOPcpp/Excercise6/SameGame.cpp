@@ -112,7 +112,7 @@ int calculateScore(const vector<pair<int, int>>& group) {
     int groupSize = group.size();
     return groupSize * (groupSize - 1);
 }
-void makeMove(vector<vector<char>>& board) {
+void makeMove(vector<vector<char>>& board, int *s) {
     int row, col;
     cout << "Geben Sie die Koordinaten des Steins ein (z.B. C3): ";
     char input[3];
@@ -128,10 +128,11 @@ void makeMove(vector<vector<char>>& board) {
 
     if (group.size() > 1) {
         int score = calculateScore(group);
+        *s += score;
         removeGroup(board, group);
         slideDown(board);
         shiftColumns(board);
-        cout << "Gruppe entfernt! Punkte: " << score << endl;
+        cout << "Gruppe entfernt! Punkte: " << score << " Score gesamt: " << *s << endl;
     } else {
         cout << "Keine Gruppe gefunden!" << endl;
     }
@@ -158,13 +159,13 @@ int main() {
 
     initializeBoard(board);
     printBoard(board);
-
+    int score = 0;
     while (hasPossibleMoves(board)) {
-        makeMove(board);
+        makeMove(board, &score);
         printBoard(board);
     }
 
-    cout << "Spiel beendet!" << "\n";
+    cout << "Spiel beendet! Score: " << score << "\n";
 
     return 0;
 }
