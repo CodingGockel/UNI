@@ -8,10 +8,15 @@ import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 
 public class SMTPClientSocket {
-    public static void sendMailWithSSL(String host, int port, String username, String password, String fromAdress, String[] toAdresses, String subject, String body){
+    public static void sendMailWithSSL(boolean ssl, String host, int port, String username, String password, String fromAdress, String[] toAdresses, String subject, String body){
         try {
-            SSLSocketFactory sslSocketFactory = (SSLSocketFactory) SSLSocketFactory.getDefault();
-            SSLSocket socket = (SSLSocket) sslSocketFactory.createSocket(host, port);
+            Socket socket;
+            if(ssl){
+                SSLSocketFactory sslSocketFactory = (SSLSocketFactory) SSLSocketFactory.getDefault();
+                socket = (SSLSocket) sslSocketFactory.createSocket(host, port);
+            }else {
+                socket = new Socket(host,port);
+            }
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 
@@ -221,7 +226,7 @@ public class SMTPClientSocket {
                 body = scanner.nextLine();
 
                 if(ssl){
-                    sendMailWithSSL(host,port,username,password,fromAdress,toAddresses,subject,body);
+                    sendMailWithSSL(true,host,port,username,password,fromAdress,toAddresses,subject,body);
                 }else{
                     sendMailWithoutSSL(host,port,username,password,fromAdress,toAddresses,subject,body);
                 }
@@ -244,7 +249,7 @@ public class SMTPClientSocket {
                         body = scanner.nextLine();
 
                         if(ssl){
-                            sendMailWithSSL(host,port,username,password,fromAdress,toAddresses,subject,body);
+                            sendMailWithSSL(true,host,port,username,password,fromAdress,toAddresses,subject,body);
                         }else{
                             sendMailWithoutSSL(host,port,username,password,fromAdress,toAddresses,subject,body);
                         }
