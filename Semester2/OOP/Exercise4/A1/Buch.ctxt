@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=Buch
-comment1.params=a\ b\ c\ h\ beschreibung
-comment1.target=Buch(int,\ int,\ double,\ java.lang.String,\ java.lang.String)
-comment2.params=
-comment2.target=void\ print()
-numComments=3

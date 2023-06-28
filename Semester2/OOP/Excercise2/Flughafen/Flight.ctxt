@@ -1,5 +1,0 @@
-#BlueJ class context
-comment0.target=Flight
-comment1.params=flightNumber\ location\ gate\ time\ inOut
-comment1.target=Flight(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.Boolean)
-numComments=2
