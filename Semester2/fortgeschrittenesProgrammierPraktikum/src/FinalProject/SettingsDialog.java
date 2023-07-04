@@ -8,12 +8,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Properties;
 
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 /**
  * Displays a setting form that allows configuring SMTP settings.
@@ -28,12 +23,16 @@ public class SettingsDialog extends JDialog {
     private JLabel labelPort = new JLabel("Port number: ");
     private JLabel labelUser = new JLabel("Username: ");
     private JLabel labelPass = new JLabel("Password: ");
-
+    private JLabel labelSender = new JLabel("Sender Mail: ");
+    private JLabel labelSSL = new JLabel("SSL: ");
+    private JLabel labelTLS = new JLabel("TLS: ");
     private JTextField textHost = new JTextField(20);
     private JTextField textPort = new JTextField(20);
     private JTextField textUser = new JTextField(20);
-    private JTextField textPass = new JTextField(20);
-
+    private JPasswordField textPass = new JPasswordField(20);
+    private JTextField textSender = new JTextField(30);
+    private JCheckBox checkSSL = new JCheckBox(" ");
+    private JCheckBox checkTLS = new JCheckBox(" ");
     private JButton buttonSave = new JButton("Save");
 
     public SettingsDialog(JFrame parent, ConfigUtility configUtil) {
@@ -53,7 +52,7 @@ public class SettingsDialog extends JDialog {
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 0;
-        constraints.insets = new Insets(10, 10, 5, 10);
+        constraints.insets = new Insets(10, 10, 7, 10);
         constraints.anchor = GridBagConstraints.WEST;
 
         add(labelHost, constraints);
@@ -84,6 +83,28 @@ public class SettingsDialog extends JDialog {
 
         constraints.gridy = 4;
         constraints.gridx = 0;
+        add(labelSender, constraints);
+
+        constraints.gridx = 1;
+        add(textSender, constraints);
+
+        constraints.gridy = 5;
+        constraints.gridx = 0;
+        add(labelSSL, constraints);
+
+        constraints.gridx = 1;
+        add(checkSSL, constraints);
+
+        constraints.gridy = 6;
+        constraints.gridx = 0;
+        add(labelTLS, constraints);
+
+        constraints.gridx = 1;
+        add(checkTLS, constraints);
+
+
+        constraints.gridy = 7;
+        constraints.gridx = 0;
         constraints.gridwidth = 2;
         constraints.anchor = GridBagConstraints.CENTER;
         add(buttonSave, constraints);
@@ -110,6 +131,18 @@ public class SettingsDialog extends JDialog {
         textPort.setText(configProps.getProperty("mail.smtp.port"));
         textUser.setText(configProps.getProperty("mail.user"));
         textPass.setText(configProps.getProperty("mail.password"));
+        textSender.setText(configProps.getProperty("sender.mail"));
+        if(configProps.containsKey("mail.smtp.ssl.enable")){
+            checkSSL.setSelected(true);
+        }else{
+            checkSSL.setSelected(false);
+        }
+
+        if(configProps.containsKey("mail.smtp.starttls.enable")){
+            checkTLS.setSelected(true);
+        }else{
+            checkTLS.setSelected(false);
+        }
     }
 
     private void buttonSaveActionPerformed(ActionEvent event) {
@@ -117,7 +150,10 @@ public class SettingsDialog extends JDialog {
             configUtil.saveProperties(textHost.getText(),
                     textPort.getText(),
                     textUser.getText(),
-                    textPass.getText());
+                    new String(textPass.getPassword()),
+                    textSender.getText(),
+                    checkSSL.isSelected(),
+                    checkTLS.isSelected());
             JOptionPane.showMessageDialog(SettingsDialog.this,
                     "Properties were saved successfully!");
             dispose();

@@ -33,10 +33,8 @@ public class SwingEmailSender extends JFrame {
     private JMenuBar menuBar = new JMenuBar();
     private JMenu menuFile = new JMenu("File");
     private JMenuItem menuItemSetting = new JMenuItem("Settings..");
-
     private JLabel labelTo = new JLabel("To: ");
     private JLabel labelSubject = new JLabel("Subject: ");
-
     private JTextField fieldTo = new JTextField(30);
     private JTextField fieldSubject = new JTextField(30);
 
@@ -79,6 +77,7 @@ public class SwingEmailSender extends JFrame {
     }
 
     private void setupForm() {
+
         constraints.gridx = 0;
         constraints.gridy = 0;
         add(labelTo, constraints);
@@ -141,7 +140,7 @@ public class SwingEmailSender extends JFrame {
 
         try {
             Properties smtpProperties = configUtil.loadProperties();
-            EmailUtility.sendEmail(smtpProperties, toAddress, subject, message, attachFiles);
+            EmailUtility.sendMail(smtpProperties, toAddress, subject, message, attachFiles);
 
             JOptionPane.showMessageDialog(this,
                     "The e-mail has been sent successfully!");

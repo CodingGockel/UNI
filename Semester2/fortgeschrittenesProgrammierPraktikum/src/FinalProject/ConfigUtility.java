@@ -23,11 +23,10 @@ public class ConfigUtility {
         // sets default properties
         defaultProps.setProperty("mail.smtp.host", "smtp.gmail.com");
         defaultProps.setProperty("mail.smtp.port", "587");
-        defaultProps.setProperty("mail.user", "tom@gmail.com");
+        defaultProps.setProperty("mail.user", "test@gmail.com");
         defaultProps.setProperty("mail.password", "secret");
-        defaultProps.setProperty("mail.smtp.starttls.enable", "true");
         defaultProps.setProperty("mail.smtp.auth", "true");
-
+        defaultProps.setProperty("sender.mail", "test@test.de");
         configProps = new Properties(defaultProps);
 
         // loads properties from file
@@ -40,13 +39,23 @@ public class ConfigUtility {
         return configProps;
     }
 
-    public void saveProperties(String host, String port, String user, String pass) throws IOException {
+    public void saveProperties(String host, String port, String user, String pass, String sender, boolean ssl, boolean tls) throws IOException {
         configProps.setProperty("mail.smtp.host", host);
         configProps.setProperty("mail.smtp.port", port);
         configProps.setProperty("mail.user", user);
         configProps.setProperty("mail.password", pass);
-        configProps.setProperty("mail.smtp.starttls.enable", "true");
         configProps.setProperty("mail.smtp.auth", "true");
+        configProps.setProperty("sender.mail", sender);
+        if(ssl){
+            configProps.setProperty("mail.smtp.ssl.enable", "true");
+        }else{
+            configProps.remove("mail.smtp.ssl.enable");
+        }
+        if(tls){
+            configProps.setProperty("mail.smtp.starttls.enable", "true");
+        }else{
+            configProps.remove("mail.smtp.starttls.enable");
+        }
 
         OutputStream outputStream = new FileOutputStream(configFile);
         configProps.store(outputStream, "host setttings");

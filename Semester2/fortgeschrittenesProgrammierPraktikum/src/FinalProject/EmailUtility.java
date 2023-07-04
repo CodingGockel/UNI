@@ -18,6 +18,7 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+import javax.mail.BodyPart;
 import javax.mail.internet.MimeMultipart;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
@@ -28,68 +29,12 @@ import javax.net.ssl.SSLSocketFactory;
  *
  */
 public class EmailUtility {
-    public static void sendEmail(Properties smtpProperties, String toAddress,
-                                 String subject, String message, File[] attachFiles)
-            throws AddressException, MessagingException, IOException {
-
-        final String userName = smtpProperties.getProperty("mail.user");
-        final String password = smtpProperties.getProperty("mail.password");
-
-        // creates a new session with an authenticator
-        Authenticator auth = new Authenticator() {
-            public PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(userName, password);
-            }
-        };
-        Session session = Session.getInstance(smtpProperties, auth);
-
-        // creates a new e-mail message
-        Message msg = new MimeMessage(session);
-
-        msg.setFrom(new InternetAddress(userName));
-        InternetAddress[] toAddresses = { new InternetAddress(toAddress) };
-        msg.setRecipients(Message.RecipientType.TO, toAddresses);
-        msg.setSubject(subject);
-        msg.setSentDate(new Date());
-
-        // creates message part
-        MimeBodyPart messageBodyPart = new MimeBodyPart();
-        messageBodyPart.setContent(message, "text/html");
-
-        // creates multi-part
-        Multipart multipart = new MimeMultipart();
-        multipart.addBodyPart(messageBodyPart);
-
-        // adds attachments
-        if (attachFiles != null && attachFiles.length > 0) {
-            for (File aFile : attachFiles) {
-                MimeBodyPart attachPart = new MimeBodyPart();
-
-                try {
-                    attachPart.attachFile(aFile);
-                } catch (IOException ex) {
-                    throw ex;
-                }
-
-                multipart.addBodyPart(attachPart);
-            }
-        }
-
-        // sets the multi-part as e-mail's content
-        msg.setContent(multipart);
-
-        // sends the e-mail
-        Transport.send(msg);
-
-    }
-    public static void sendMailWithSSL(String host, int port, String username, String password, String fromAdress, String[] toAdresses, String subject, String body){
-
-        Properties props = new Properties();
-        props.put("mail.smtp.host", host);
-        props.put("mail.smtp.port", String.valueOf(port));
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.ssl.enable", "true");
-
+    public static void sendMail(Properties props, String toAdresses, String subject, String body, File[] attachFiles) throws AddressException, MessagingException, IOException{
+        final String username = props.getProperty("mail.user");
+        final String password = props.getProperty("mail.password");
+        final String fromAdress = props.getProperty("sender.mail");
+        props.remove("sender.mail");
+        String[] toAdress = toAdresses.split(",");
         Session session = Session.getInstance(props, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(username, password);
@@ -100,24 +45,39 @@ public class EmailUtility {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(fromAdress));
 
-            InternetAddress[] recipientAddresses = new InternetAddress[toAdresses.length];
-            for (int i = 0; i < toAdresses.length; i++) {
-                recipientAddresses[i] = new InternetAddress(toAdresses[i]);
+            InternetAddress[] recipientAddresses = new InternetAddress[toAdress.length];
+            for (int i = 0; i < toAdress.length; i++) {
+                recipientAddresses[i] = new InternetAddress(toAdress[i]);
             }
 
             message.setRecipients(Message.RecipientType.TO, recipientAddresses);
             message.setSubject(subject);
-            message.setText(body);
+            message.setSentDate(new Date());
+
+            MimeBodyPart messageBodyPart = new MimeBodyPart();
+            messageBodyPart.setContent(body, "text/html");
+
+            Multipart multipart = new MimeMultipart();
+            multipart.addBodyPart(messageBodyPart);
+
+            if (attachFiles != null && attachFiles.length > 0) {
+                for (File aFile : attachFiles) {
+                    MimeBodyPart attachPart = new MimeBodyPart();
+
+                    try {
+                        attachPart.attachFile(aFile);
+                    } catch (IOException ex) {
+                        throw ex;
+                    }
+
+                    multipart.addBodyPart(attachPart);
+                }
+            }
+            message.setContent(multipart);;
 
             Transport.send(message);
-
-            System.out.println("Email sent successfully!");
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
-    }
-    private static String encodeBase64(String input) {
-        byte[] encodedBytes = Base64.getEncoder().encode(input.getBytes(StandardCharsets.UTF_8));
-        return new String(encodedBytes, StandardCharsets.UTF_8);
     }
 }
