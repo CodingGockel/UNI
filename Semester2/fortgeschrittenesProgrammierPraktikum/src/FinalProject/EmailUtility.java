@@ -23,11 +23,6 @@ import javax.mail.internet.MimeMultipart;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 
-/**
- * A utility class that sends an e-mail message with attachments.
- * @author www.codejava.net
- *
- */
 public class EmailUtility {
     public static void sendMail(Properties props, String toAdresses, String subject, String body, File[] attachFiles) throws AddressException, MessagingException, IOException{
         final String username = props.getProperty("mail.user");

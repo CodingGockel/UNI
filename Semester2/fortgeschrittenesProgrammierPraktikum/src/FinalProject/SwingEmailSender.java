@@ -22,25 +22,21 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-/**
- * A Swing application that allows sending e-mail messages from a SMTP server.
- * @author www.codejava.net
- *
- */
 public class SwingEmailSender extends JFrame {
     private ConfigUtility configUtil = new ConfigUtility();
-
     private JMenuBar menuBar = new JMenuBar();
     private JMenu menuFile = new JMenu("File");
-    private JMenuItem menuItemSetting = new JMenuItem("Settings..");
+    private JMenuItem menuItemSetting = new JMenuItem("Settings");
+    private JLabel labelFrom = new JLabel("From: ");
     private JLabel labelTo = new JLabel("To: ");
     private JLabel labelSubject = new JLabel("Subject: ");
+    private JTextField fieldFrom = new JTextField(30);
     private JTextField fieldTo = new JTextField(30);
     private JTextField fieldSubject = new JTextField(30);
 
     private JButton buttonSend = new JButton("SEND");
 
-    private JFilePicker filePicker = new JFilePicker("Attached", "Attach File...");
+    private JFilePicker filePicker = new JFilePicker("Attached", "Attach File");
 
     private JTextArea textAreaMessage = new JTextArea(10, 30);
 
@@ -77,9 +73,21 @@ public class SwingEmailSender extends JFrame {
     }
 
     private void setupForm() {
-
         constraints.gridx = 0;
         constraints.gridy = 0;
+        add(labelFrom, constraints);
+
+        constraints.gridx = 1;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        add(fieldFrom, constraints);
+
+        Properties props = getProps();
+        if(props != null){
+            fieldFrom.setText(props.getProperty("sender.mail"));
+        }
+
+        constraints.gridx = 0;
+        constraints.gridy = 1;
         add(labelTo, constraints);
 
         constraints.gridx = 1;
@@ -87,7 +95,7 @@ public class SwingEmailSender extends JFrame {
         add(fieldTo, constraints);
 
         constraints.gridx = 0;
-        constraints.gridy = 1;
+        constraints.gridy = 2;
         add(labelSubject, constraints);
 
         constraints.gridx = 1;
@@ -109,13 +117,13 @@ public class SwingEmailSender extends JFrame {
         });
 
         constraints.gridx = 0;
-        constraints.gridy = 2;
+        constraints.gridy = 3;
         constraints.gridheight = 1;
         constraints.gridwidth = 3;
         filePicker.setMode(JFilePicker.MODE_OPEN);
         add(filePicker, constraints);
 
-        constraints.gridy = 3;
+        constraints.gridy = 4;
         constraints.weightx = 1.0;
         constraints.weighty = 1.0;
 
@@ -139,6 +147,7 @@ public class SwingEmailSender extends JFrame {
         }
 
         try {
+            configUtil.getConfigProps().setProperty("sender.mail", fieldFrom.getText());
             Properties smtpProperties = configUtil.loadProperties();
             EmailUtility.sendMail(smtpProperties, toAddress, subject, message, attachFiles);
 
@@ -179,7 +188,14 @@ public class SwingEmailSender extends JFrame {
 
         return true;
     }
-
+    private Properties getProps(){
+        try{
+            return configUtil.loadProperties();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        return null;
+    }
     public static void main(String[] args) {
         // set look and feel to system dependent
         try {

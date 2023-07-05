@@ -10,11 +10,6 @@ import java.util.Properties;
 
 import javax.swing.*;
 
-/**
- * Displays a setting form that allows configuring SMTP settings.
- * @author www.codejava.net
- *
- */
 public class SettingsDialog extends JDialog {
 
     private ConfigUtility configUtil;

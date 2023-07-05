@@ -9,11 +9,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 
-/**
- * A utility class that reads/saves SMTP settings from/to a properties file.
- * @author www.codejava.net
- *
- */
 public class ConfigUtility {
     private File configFile = new File("smtp.properties");
     private Properties configProps;
@@ -60,5 +55,8 @@ public class ConfigUtility {
         OutputStream outputStream = new FileOutputStream(configFile);
         configProps.store(outputStream, "host setttings");
         outputStream.close();
+    }
+    public Properties getConfigProps(){
+        return this.configProps;
     }
 }
