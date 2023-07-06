@@ -1,0 +1,140 @@
+Received: from exchange2.ads.uni-jena.de (10.139.32.81) by
+ exchange2.ads.uni-jena.de (10.139.32.81) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.1.2507.27 via Mailbox Transport; Wed, 5 Jul 2023 17:12:16 +0200
+Received: from exchange2.ads.uni-jena.de (10.139.32.81) by
+ exchange2.ads.uni-jena.de (10.139.32.81) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.1.2507.27; Wed, 5 Jul 2023 17:12:16 +0200
+Received: from smtp-intra-01.rz.uni-jena.de (10.138.192.40) by
+ exchange2.ads.uni-jena.de (10.139.32.81) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.1.2507.27 via Frontend Transport; Wed, 5 Jul 2023 17:12:16 +0200
+Received: from moodle-app-01.rz.uni-jena.de (moodle-app-01.rz.uni-jena.de [10.139.32.50])
+	by smtp-intra-01.rz.uni-jena.de (Postfix) with ESMTPSA id 4Qx36m3Ng8z2wxG
+	for <moritz.hahn@uni-jena.de>; Wed,  5 Jul 2023 17:12:16 +0200 (CEST)
+Received: by moodle-app-01.rz.uni-jena.de (Postfix, from userid 33)
+	id 4Qx36m2fvtzbl; Wed,  5 Jul 2023 17:12:16 +0200 (CEST)
+To: Moritz Hahn <moritz.hahn@uni-jena.de>
+Subject: SS 2023 - OOP: Veranstaltung am 07.07.
+Date: Wed, 5 Jul 2023 17:12:16 +0200
+From: =?utf-8?B?QW5kcsOpIFNjaMOkZmVyICjDvGJlciBtb29kbGUudW5pLWplbmEuZGUp?=
+	<andre.schaefer@uni-jena.de>
+Reply-To: =?utf-8?B?QW5kcsOpIFNjaMOkZmVy?= <andre.schaefer@uni-jena.de>
+Message-ID: <03093e81d72da6225c366807aa483536a4181443133088149cefc9ecfc9c3346@moodle.uni-jena.de>
+X-Mailer: PHPMailer 6.5.3 (https://github.com/PHPMailer/PHPMailer)
+List-Id: =?utf-8?B?IkFua8O8bmRpZ3VuZ2VuIiA8bW9vZGxlZm9ydW02OTI0M0Btb29kbGUudW4=?=
+ =?utf-8?B?aS1qZW5hLmRlPg==?=
+List-Help: https://moodle.uni-jena.de/mod/forum/view.php?f=69243
+X-Course-Id: 45915
+X-Course-Name: Objektorientierte Programmierung (SoSe 2023)
+Precedence: Bulk
+X-Auto-Response-Suppress: All
+Auto-Submitted: auto-generated
+List-Unsubscribe: <>
+Thread-Topic: SS 2023 - OOP: Veranstaltung am 07.07.
+Thread-Index: 03093e81d72da6225c366807aa48
+Content-Type: multipart/alternative;
+	boundary="b1_kb3IRGNmKDO2BjN1YAgUlyeviQFUKO98i1b89kGysiQ"
+Return-Path: noreply-moodle@uni-jena.de
+X-MS-Exchange-Organization-Network-Message-Id: 85133e89-04fd-496b-3789-08db7d6a3834
+X-MS-Exchange-Organization-AuthSource: exchange2.ads.uni-jena.de
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:00.1769596
+X-MS-Exchange-Processed-By-BccFoldering: 15.01.2507.027
+MIME-Version: 1.0
+
+--b1_kb3IRGNmKDO2BjN1YAgUlyeviQFUKO98i1b89kGysiQ
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+=0ASS 2023 - OOP -> Foren -> Ank=C3=BCndigungen -> Veranstaltung am 07.07.=
+=0Ahttps://moodle.uni-jena.de/mod/forum/discuss.php?d=3D104079#p167850=0AVe=
+ranstaltung am 07.07.=0Avon Andr=C3=A9 Sch=C3=A4fer - Mittwoch, 5. Juli 202=
+3, 16:41=0A----------------------------------------------------------------=
+-----=0ALiebe Teilnehmerinnen und liebe Teilnehmer,=0A=0Aam 07.07. wird kei=
+ne Vorlesung im Modul Objektorientierte Programmierung=0Abei Prof. Amme sta=
+ttfinden.=0A=0AIm nachfolgenden Raum k=C3=B6nnen jedoch Fragen zur Vorlesun=
+g und zur Klausur=0Aam 07.07 im Zeitraum von 10:15 Uhr-11:45 Uhr gestellt w=
+erden.=0A=0Ahttps://bbb.mirz.uni-jena.de/b/wol-x7l-u7r-hpn [1]=0A=0ABeste G=
+r=C3=BC=C3=9Fe=0AAndr=C3=A9 Sch=C3=A4fer=0A=0ALinks:=0A------=0A[1] https:/=
+/bbb.mirz.uni-jena.de/b/wol-x7l-u7r-hpn=0A=0A------------------------------=
+---------------------------------------=0AThis is a copy of a message poste=
+d in SS 2023 - OOP.=0A=0AEinstellungen f=C3=BCr die Forumszusammenfassung =
+=C3=A4ndern:=0Ahttps://moodle.uni-jena.de/mod/forum/index.php?id=3D45915=0A
+--b1_kb3IRGNmKDO2BjN1YAgUlyeviQFUKO98i1b89kGysiQ
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv class=3D"navbar">=0A=
+    <a target=3D"_blank" href=3D"https://moodle.uni-jena.de/course/view.php=
+?id=3D45915">SS 2023 - OOP</a>=0A=
+    =C2=BB=0A=
+    <a target=3D"_blank" href=3D"https://moodle.uni-jena.de/mod/forum/index=
+.php?id=3D45915">Foren</a>=0A=
+    =C2=BB=0A=
+    <a target=3D"_blank" href=3D"https://moodle.uni-jena.de/mod/forum/view.=
+php?f=3D69243">Ank=C3=BCndigungen</a>=0A=
+    =C2=BB=0A=
+    <a target=3D"_blank" href=3D"https://moodle.uni-jena.de/mod/forum/discu=
+ss.php?d=3D104079">Veranstaltung am 07.07.</a>=0A=
+</div>=0A=
+=0A=
+<table border=3D"0" cellpadding=3D"3" cellspacing=3D"0" class=3D"forumpost"=
+>=0A=
+    <tr class=3D"header">=0A=
+        <td width=3D"35" valign=3D"top" class=3D"picture left">=0A=
+            <a href=3D"https://moodle.uni-jena.de/user/view.php?id=3D45239&=
+amp;course=3D45915" class=3D"d-inline-block aabtn"><img src=3D"https://mood=
+le.uni-jena.de/theme/image.php/_s/boost/core/1680254417/u/f2" class=3D"user=
+picture defaultuserpic" width=3D"35" height=3D"35" alt=3D""></a>=0A=
+        </td>=0A=
+        <td class=3D"topic starter">=0A=
+            <div class=3D"subject">=0A=
+                Veranstaltung am 07.07.=0A=
+            </div>=0A=
+            <div class=3D"author">=0A=
+                von <a target=3D"_blank" href=3D"https://moodle.uni-jena.de=
+/user/view.php?id=3D45239&amp;course=3D45915">Andr=C3=A9 Sch=C3=A4fer</a> -=
+ Mittwoch, 5. Juli 2023, 16:41=0A=
+            </div>=0A=
+        </td>=0A=
+    </tr>=0A=
+    <tr>=0A=
+        <td class=3D"left side" valign=3D"top">=0A=
+                &nbsp;=0A=
+        </td>=0A=
+        <td class=3D"content">=0A=
+            <p dir=3D"ltr" style=3D"text-align:left;">Liebe Teilnehmerinnen=
+ und liebe Teilnehmer,</p><p dir=3D"ltr" style=3D"text-align:left;">am 07.0=
+7. wird keine Vorlesung im Modul Objektorientierte Programmierung bei Prof.=
+ Amme stattfinden.</p><p dir=3D"ltr" style=3D"text-align:left;">Im nachfolg=
+enden Raum k=C3=B6nnen jedoch Fragen zur Vorlesung und zur Klausur am 07.07=
+ im Zeitraum von 10:15 Uhr-11:45 Uhr gestellt werden.</p><p dir=3D"ltr" sty=
+le=3D"text-align:left;"><a href=3D"https://bbb.mirz.uni-jena.de/b/wol-x7l-u=
+7r-hpn">https://bbb.mirz.uni-jena.de/b/wol-x7l-u7r-hpn</a><br></p><p dir=3D=
+"ltr" style=3D"text-align:left;">Beste Gr=C3=BC=C3=9Fe<br>Andr=C3=A9 Sch=C3=
+=A4fer</p>=0A=
+=0A=
+            <div class=3D"commands">=0A=
+            </div>=0A=
+=0A=
+            <div class=3D"link">=0A=
+                <a target=3D"_blank" href=3D"https://moodle.uni-jena.de/mod=
+/forum/discuss.php?d=3D104079#p167850">=0A=
+                    Diskussion im Forum zeigen=0A=
+                </a>=0A=
+            </div>=0A=
+        </td>=0A=
+    </tr>=0A=
+</table>=0A=
+=0A=
+<hr>=0A=
+<div class=3D"mdl-align unsubscribelink">=0A=
+    <a href=3D"https://moodle.uni-jena.de/mod/forum/index.php?id=3D45915">E=
+instellungen zur Zusammenfassung neuer Forenbeitr=C3=A4ge =C3=A4ndern</a>=
+=0A=
+</div>
+
+--b1_kb3IRGNmKDO2BjN1YAgUlyeviQFUKO98i1b89kGysiQ--

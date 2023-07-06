@@ -1,0 +1,48 @@
+Received: from exchange1.ads.uni-jena.de (10.139.32.80) by
+ exchange2.ads.uni-jena.de (10.139.32.81) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.1.2507.27 via Mailbox Transport; Thu, 6 Jul 2023 01:12:43 +0200
+Received: from exchange2.ads.uni-jena.de (10.139.32.81) by
+ exchange1.ads.uni-jena.de (10.139.32.80) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.1.2507.27; Thu, 6 Jul 2023 01:12:43 +0200
+Received: from smtp-mx-01.rz.uni-jena.de (141.35.104.46) by
+ exchange2.ads.uni-jena.de (10.139.32.81) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.1.2507.27 via Frontend Transport; Thu, 6 Jul 2023 01:12:43 +0200
+Received: from a2391.mx.srv.dfn.de (a2391.mx.srv.dfn.de [194.95.232.201])
+	by smtp-mx-01.rz.uni-jena.de (Postfix) with ESMTPS id 4QxFn75YvLz7vT0
+	for <Moritz.hahn@uni-jena.de>; Thu,  6 Jul 2023 01:12:43 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at mgw5-han.srv.dfn.de
+Received-SPF: None (mailfrom) identity=mailfrom; client-ip=178.77.109.35; helo=vwp15496.webpack.hosteurope.de; envelope-from=moritz@hahnimnetz.de; receiver=<UNKNOWN> 
+Received: from vwp15496.webpack.hosteurope.de (vwp15496.webpack.hosteurope.de [178.77.109.35])
+	by a2391.mx.srv.dfn.de (Postfix) with ESMTPS id ECB7422004F
+	for <Moritz.hahn@uni-jena.de>; Thu,  6 Jul 2023 01:12:40 +0200 (CEST)
+Received: from [37.4.248.47] (helo=host.docker.internal); authenticated
+	by vwp15496.webpack.hosteurope.de running ExIM with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	id 1qHBfs-0008Ki-7j; Thu, 06 Jul 2023 01:12:40 +0200
+Date: Thu, 6 Jul 2023 01:12:39 +0200
+From: <Moritz@hahnimnetz.de>
+To: <Moritz.hahn@uni-jena.de>
+Message-ID: <1734102032.1.1688598759280@host.docker.internal>
+Subject: test
+Content-Type: multipart/mixed;
+	boundary="----=_Part_0_910556799.1688598759242"
+X-bounce-key: webpack.hosteurope.de;moritz@hahnimnetz.de;1688598762;1cd5e9bd;
+X-HE-SMSGID: 1qHBfs-0008Ki-7j
+Return-Path: Moritz@hahnimnetz.de
+X-MS-Exchange-Organization-Network-Message-Id: 0f1dfc1d-d45b-4360-b709-08db7dad568b
+X-MS-Exchange-Organization-AuthSource: exchange2.ads.uni-jena.de
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:00.1680278
+X-MS-Exchange-Processed-By-BccFoldering: 15.01.2507.027
+MIME-Version: 1.0
+
+------=_Part_0_910556799.1688598759242
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">m=
+=EF=BF=BDll=
+
+------=_Part_0_910556799.1688598759242--

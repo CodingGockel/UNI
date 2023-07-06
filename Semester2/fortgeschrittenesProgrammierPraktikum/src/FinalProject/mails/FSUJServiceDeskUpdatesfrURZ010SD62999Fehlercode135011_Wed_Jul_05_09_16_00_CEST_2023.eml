@@ -1,0 +1,547 @@
+Received: from exchange2.ads.uni-jena.de (10.139.32.81) by
+ exchange2.ads.uni-jena.de (10.139.32.81) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.1.2507.27 via Mailbox Transport; Wed, 5 Jul 2023 09:15:59 +0200
+Received: from exchange1.ads.uni-jena.de (10.139.32.80) by
+ exchange2.ads.uni-jena.de (10.139.32.81) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.1.2507.27; Wed, 5 Jul 2023 09:15:59 +0200
+Received: from smtp-intra-03.rz.uni-jena.de (10.138.192.41) by
+ exchange1.ads.uni-jena.de (10.139.32.80) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.1.2507.27 via Frontend Transport; Wed, 5 Jul 2023 09:15:59 +0200
+Received: from jiraservice-app-p.rz.uni-jena.de (jiraservice-app-p.rz.uni-jena.de [10.139.32.141])
+	by smtp-intra-03.rz.uni-jena.de (Postfix) with ESMTPSA id 4QwrYD1c2ZzySt
+	for <moritz.hahn@uni-jena.de>; Wed,  5 Jul 2023 09:16:00 +0200 (CEST)
+Received: from jiraservice-app-p.rz.uni-jena.de (localhost [127.0.0.1])
+	by jiraservice-app-p.rz.uni-jena.de (Postfix) with ESMTP id 4QwrYD0kQmz14Kbn
+	for <moritz.hahn@uni-jena.de>; Wed,  5 Jul 2023 09:16:00 +0200 (CEST)
+Date: Wed, 5 Jul 2023 09:16:00 +0200
+From: "(FSUJ Service Desk)" <service.urz@uni-jena.de>
+To: <moritz.hahn@uni-jena.de>
+Message-ID: <JIRA.420115.1685955108000.10313.1688541360103@Atlassian.JIRA>
+In-Reply-To: <JIRA.420115.1685955108000@Atlassian.JIRA>
+References: <JIRA.420115.1685955108000@Atlassian.JIRA> <JIRA.420115.1685955108494@jiraservice-app-p.rz.uni-jena.de>
+Subject: =?UTF-8?Q?[FSUJ_Service_Desk]_Updates_f=C3=BCr_?=
+ =?UTF-8?Q?URZ010SD-62999:_Fehlercode_135011?=
+Content-Type: multipart/related;
+	boundary="----=_Part_14047_148859442.1688541335280"
+X-JIRA-FingerPrint: 495fdb3d0da8cc92dbb96d65fbedf9a9
+Auto-Submitted: auto-generated
+Precedence: bulk
+Return-Path: service.urz@uni-jena.de
+X-MS-Exchange-Organization-Network-Message-Id: 56548cef-2ecd-4395-ed2a-08db7d27af08
+X-MS-Exchange-Organization-AuthSource: exchange1.ads.uni-jena.de
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:00.0841679
+X-MS-Exchange-Processed-By-BccFoldering: 15.01.2507.027
+MIME-Version: 1.0
+
+------=_Part_14047_148859442.1688541335280
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns=3D"http://www.w3.org/1999/xht=
+ml"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">=20
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1.0, maximum-scale=3D1.0">=20
+        <base href=3D"https://servicedesk.uni-jena.de">=20
+        <title>Message Title</title>=20
+    </head>=20
+    <body class=3D"jira" style=3D"width: 100%; -webkit-text-size-adjust: 10=
+0%; -ms-text-size-adjust: 100%; margin: 0; padding: 0; color: #172b4d; font=
+-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',=
+ 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif; =
+font-size: 14px; font-weight: 400; line-height: 1.429; letter-spacing: 0"> =
+<!--[if mso]>
+<style type=3D"text/css">
+body, table, td {font-family: "Segoe UI", Arial, Helvetica, sans-serif !imp=
+ortant;}
+</style>
+<![endif]-->=20
+        <table id=3D"background-table" cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"100%" style=3D"border-collapse: collapse; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt">=20
+        </table>
+        <table width=3D"100%" align=3D"left" style=3D"border-collapse: coll=
+apse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">=20
+            <tbody>
+                <tr>
+                    <td style=3D"padding: 20px !important; border-collapse:=
+ collapse; border-spacing: 0px; color: #172b4d; padding: 0px" align=3D"left=
+">=20
+                        <table width=3D"100%" style=3D"max-width: 960px; bo=
+rder-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+                            <tbody>
+                              <tr>
+                              <td width=3D"100%" style=3D"width: 100%; bord=
+er-collapse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px" a=
+lign=3D"left">=20
+                              <table id=3D"header-history" style=3D"border-=
+collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">=20
+                              <tbody>
+                              <tr>=20
+                              <td colspan=3D"2" style=3D"border-collapse: c=
+ollapse; border-spacing: 0px; color: #172b4d; padding: 0px">There is <stron=
+g>1 update</strong>, <strong>2 comments</strong>.</td>=20
+                              </tr>=20
+                              </tbody>
+                              </table>=20
+                              <table style=3D"border-collapse: collapse; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt">=20
+                              <tbody>
+                              <tr>=20
+                              <td class=3D"spacer-20" style=3D"border-colla=
+pse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; height: 2=
+0px; font-size: 20px; line-height: 20px" height=3D"20">&nbsp;</td>=20
+                              </tr>=20
+                              </tbody>
+                              </table>=20
+                              <table class=3D"structure" width=3D"100%" sty=
+le=3D"border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0=
+pt; border-radius: 6px; border: solid 2px #ebecf0; border-collapse: separat=
+e">=20
+                              <tbody>
+                              <tr>
+                              <td style=3D"border-collapse: collapse; borde=
+r-spacing: 0px; color: #172b4d; padding: 0px"></td>
+                              <td class=3D"spacer-20" style=3D"border-colla=
+pse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; height: 2=
+0px; font-size: 20px; line-height: 20px" height=3D"20">&nbsp;</td>
+                              </tr>=20
+                              <tr>
+                              <td class=3D"header updates" style=3D"border-=
+collapse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; padd=
+ing-left: 20px; padding-right: 20px">=20
+                              <table id=3D"header-top" width=3D"100%" style=
+=3D"width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-tabl=
+e-rspace: 0pt">=20
+                              <tbody>
+                              <tr>=20
+                              <td style=3D"border-collapse: collapse; borde=
+r-spacing: 0px; color: #172b4d; padding: 0px">=20
+                              <table style=3D"border-collapse: collapse; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt">=20
+                              <tbody>
+                              <tr>=20
+                              <td valign=3D"middle" style=3D"border-collaps=
+e: collapse; border-spacing: 0px; color: #172b4d; padding: 0px"> <a href=3D=
+"https://servicedesk.uni-jena.de/browse/URZ010SD" style=3D"text-decoration:=
+ none; color: #0052cc">URZ010_Service_Desk</a> </td>=20
+                              <td valign=3D"middle" class=3D"project-spacer=
+" style=3D"border-collapse: collapse; border-spacing: 0px; color: #172b4d; =
+padding: 0px; padding-left: 8px; padding-right: 8px; vertical-align: middle=
+"> / </td>=20
+                              <td valign=3D"middle" class=3D"issue-type" st=
+yle=3D"border-collapse: collapse; border-spacing: 0px; color: #172b4d; padd=
+ing: 0px; vertical-align: middle; font-size: 0"> <img class=3D"issue-type-a=
+vatar" src=3D"cid:jira-generated-image-avatar-7744b528-69dd-4bc8-9b4d-2d12a=
+cedfb14" width=3D"16" height=3D"16" alt=3D"cid:jira-generated-image-avatar-=
+7744b528-69dd-4bc8-9b4d-2d12acedfb14" style=3D"outline: none; text-decorati=
+on: none; -ms-interpolation-mode: bicubic"> </td>=20
+                              <td valign=3D"middle" class=3D"issue-key" sty=
+le=3D"border-collapse: collapse; border-spacing: 0px; color: #172b4d; paddi=
+ng: 0px; padding-left: 5px; vertical-align: middle"> <a href=3D"https://ser=
+vicedesk.uni-jena.de/browse/URZ010SD-62999" style=3D"text-decoration: none;=
+ color: #0052cc">URZ010SD-62999</a> </td>=20
+                              <td valign=3D"middle" class=3D"issue-status" =
+style=3D"border-collapse: collapse; border-spacing: 0px; color: #172b4d; pa=
+dding: 0px; padding-left: 8px; vertical-align: middle"> <span class=3D"aui-=
+lozenge aui-lozenge-subtle" style=3D"background: #dfe1e6; border-top: 3px s=
+olid #dfe1e6; border-bottom: 3px solid #dfe1e6; border-left: 6px solid #dfe=
+1e6; border-right: 6px solid #dfe1e6; border-radius: 3px; color: #253858; d=
+isplay: inline-block; font-size: 10px; font-weight: bold; line-height: 99%;=
+ margin: 0; padding: 0; text-align: center; text-decoration: none; text-tra=
+nsform: uppercase; vertical-align: text-bottom; background-color: #ffffff; =
+border-color: #c1c7d0; color: #42526e" bgcolor=3D"#ffffff">WARTET AUF KUNDE=
+N</span> </td>=20
+                              </tr>=20
+                              </tbody>
+                              </table> </td>=20
+                              </tr>=20
+                              <tr>=20
+                              <td class=3D"issue-summary" valign=3D"top" st=
+yle=3D"border-collapse: collapse; border-spacing: 0px; color: #172b4d; padd=
+ing: 0px; padding-top: 3px"><h1 style=3D"color: #172b4d; margin: 0; margin-=
+top: 0; color: #172b4d; font-size: 24px; font-weight: 500; line-height: 1.2=
+50; letter-spacing: -0.010em; text-transform: none">Fehlercode 135011</h1><=
+/td>=20
+                              </tr>=20
+                              </tbody>
+                              </table>=20
+                              <table style=3D"border-collapse: collapse; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt">=20
+                              <tbody>
+                              <tr>=20
+                              <td class=3D"spacer-10" style=3D"border-colla=
+pse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; height: 1=
+0px; font-size: 10px; line-height: 10px" height=3D"10">&nbsp;</td>=20
+                              </tr>=20
+                              </tbody>
+                              </table>=20
+                              <table id=3D"header-actions" style=3D"border-=
+collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">=20
+                              <tbody>
+                              <tr>
+                              <td colspan=3D"2" style=3D"border-collapse: c=
+ollapse; border-spacing: 0px; color: #172b4d; padding: 0px"> <a href=3D"htt=
+ps://servicedesk.uni-jena.de/browse/URZ010SD-62999" style=3D"color: #0052cc=
+">Vorgang anzeigen</a> &nbsp;&nbsp;=C2=B7&nbsp;&nbsp; <a href=3D"https://se=
+rvicedesk.uni-jena.de/browse/URZ010SD-62999#add-comment" style=3D"color: #0=
+052cc">Kommentar hinzuf=C3=BCgen</a> </td>
+                              </tr>=20
+                              </tbody>
+                              </table> </td>
+                              </tr>=20
+                              <tr>
+                              <td class=3D"spacer-40" style=3D"border-colla=
+pse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; height: 4=
+0px; font-size: 40px; line-height: 40px" height=3D"40">&nbsp;</td>
+                              </tr>=20
+                              <tr>=20
+                              <td id=3D"updates-header" class=3D"section-he=
+ader" style=3D"border-collapse: collapse; border-spacing: 0px; color: #172b=
+4d; padding: 0px; padding-left: 20px; padding-right: 20px">=20
+                              <table width=3D"100%" style=3D"width: 100%; b=
+order-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">=20
+                              <tbody>
+                              <tr>=20
+                              <td width=3D"100%" style=3D"width: 100%; bord=
+er-collapse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px"><=
+h2 style=3D"color: #172b4d; margin: 0; margin-top: 0; color: #172b4d; font-=
+size: 20px; font-weight: 500; line-height: 1.500; letter-spacing: -0.008em;=
+ text-transform: none"> 1 Update </h2></td>=20
+                              </tr>=20
+                              </tbody>
+                              </table> </td>=20
+                              </tr>=20
+                              <tr>=20
+                              <td class=3D"spacer-20" style=3D"border-colla=
+pse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; height: 2=
+0px; font-size: 20px; line-height: 20px" height=3D"20">&nbsp;</td>=20
+                              </tr>=20
+                              <tr>=20
+                              <td class=3D"updates" style=3D"border-collaps=
+e: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; padding-lef=
+t: 20px; padding-right: 20px">=20
+                              <table width=3D"100%" class=3D"group updates-=
+group" style=3D"border-collapse: collapse; mso-table-lspace: 0pt; mso-table=
+-rspace: 0pt">=20
+                              <tbody>
+                              <tr class=3D"group-header">=20
+                              <td class=3D"author" style=3D"border-collapse=
+: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; width: 32px;=
+ vertical-align: top" width=3D"32"><img src=3D"cid:jira-generated-image-ava=
+tar-3e14e5b0-6f61-4b3a-8fbc-26a2017a16c1" width=3D"24" height=3D"24" alt=3D=
+"cid:jira-generated-image-avatar-3e14e5b0-6f61-4b3a-8fbc-26a2017a16c1" styl=
+e=3D"outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;=
+ display: block; border-radius: 100%"></td>=20
+                              <td class=3D"heading" style=3D"border-collaps=
+e: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; padding-top=
+: 3px; vertical-align: top"> =C3=84nderungen von <strong>Jan Ruszkiewicz</s=
+trong> am 05.07.2023 09:05:30 </td>=20
+                              </tr>=20
+                              <tr>=20
+                              <td colspan=3D"2" class=3D"spacer-10" style=
+=3D"border-collapse: collapse; border-spacing: 0px; color: #172b4d; padding=
+: 0px; height: 10px; font-size: 10px; line-height: 10px" height=3D"10">&nbs=
+p;</td>=20
+                              </tr>=20
+                              <tr class=3D"group-content">=20
+                              <td class=3D"author spacer" style=3D"border-c=
+ollapse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; width=
+: 32px; vertical-align: top" width=3D"32"></td>=20
+                              <td class=3D"updates-diff" style=3D"border-co=
+llapse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px">=20
+                              <table style=3D"border-collapse: collapse; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt">=20
+                              <tbody>
+                              <tr class=3D"field-update">=20
+                              <td valign=3D"top" align=3D"left" class=3D"up=
+dates-diff-label" style=3D"border-collapse: collapse; border-spacing: 0px; =
+color: #172b4d; padding: 0px; max-width: 150px; vertical-align: top; color:=
+ #5e6c84; text-align: left; padding-right: 10px; padding-bottom: 5px">Statu=
+s:</td>=20
+                              <td valign=3D"top" align=3D"left" class=3D"up=
+dates-diff-content" style=3D"border-collapse: collapse; border-spacing: 0px=
+; color: #172b4d; padding: 0px; vertical-align: top; text-align: left; padd=
+ing-bottom: 5px"><span class=3D"diffremovedchars" style=3D"background-color=
+: #ffe7e7;text-decoration:line-through;">Wartet auf Support</span> <span cl=
+ass=3D"diffaddedchars" style=3D"background-color: #ddfade;">WARTET AUF KUND=
+EN</span> </td>=20
+                              </tr>=20
+                              </tbody>
+                              </table> </td>=20
+                              </tr>=20
+                              </tbody>
+                              </table>=20
+                              <table style=3D"border-collapse: collapse; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt">=20
+                              <tbody>
+                              <tr>=20
+                              <td class=3D"spacer-20" style=3D"border-colla=
+pse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; height: 2=
+0px; font-size: 20px; line-height: 20px" height=3D"20">&nbsp;</td>=20
+                              </tr>=20
+                              </tbody>
+                              </table> </td>=20
+                              </tr>=20
+                              <tr>
+                              <td class=3D"horizontal-padding" style=3D"bor=
+der-collapse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; =
+padding-left: 20px; padding-right: 20px">=20
+                              <div class=3D"line-top" style=3D"border-top: =
+solid 2px #ebecf0; padding: 0 10px; font-size: 5px; height: 5px" height=3D"=
+5">
+                              &nbsp;
+                              </div> </td>
+                              </tr>=20
+                              <tr>
+                              <td class=3D"spacer-10" style=3D"border-colla=
+pse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; height: 1=
+0px; font-size: 10px; line-height: 10px" height=3D"10"></td>
+                              </tr>=20
+                              <tr>=20
+                              <td id=3D"comments-header" class=3D"section-h=
+eader" style=3D"border-collapse: collapse; border-spacing: 0px; color: #172=
+b4d; padding: 0px; padding-left: 20px; padding-right: 20px">=20
+                              <table width=3D"100%" style=3D"width: 100%; b=
+order-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">=20
+                              <tbody>
+                              <tr>=20
+                              <td width=3D"100%" style=3D"width: 100%; bord=
+er-collapse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px"><=
+h2 style=3D"color: #172b4d; margin: 0; margin-top: 0; color: #172b4d; font-=
+size: 20px; font-weight: 500; line-height: 1.500; letter-spacing: -0.008em;=
+ text-transform: none"> 2 Kommentare </h2></td>=20
+                              </tr>=20
+                              </tbody>
+                              </table> </td>=20
+                              </tr>=20
+                              <tr>=20
+                              <td class=3D"spacer-20" style=3D"border-colla=
+pse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; height: 2=
+0px; font-size: 20px; line-height: 20px" height=3D"20">&nbsp;</td>=20
+                              </tr>=20
+                              <tr>=20
+                              <td class=3D"comments" style=3D"border-collap=
+se: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; padding-le=
+ft: 20px; padding-right: 20px">=20
+                              <table width=3D"100%" class=3D"group comments=
+-group" style=3D"border-collapse: collapse; mso-table-lspace: 0pt; mso-tabl=
+e-rspace: 0pt">=20
+                              <tbody>
+                              <tr class=3D"group-header">=20
+                              <td class=3D"author" style=3D"border-collapse=
+: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; width: 32px;=
+ vertical-align: top" width=3D"32"><img src=3D"cid:jira-generated-image-ava=
+tar-3e14e5b0-6f61-4b3a-8fbc-26a2017a16c1" width=3D"24" height=3D"24" alt=3D=
+"cid:jira-generated-image-avatar-3e14e5b0-6f61-4b3a-8fbc-26a2017a16c1" styl=
+e=3D"outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;=
+ display: block; border-radius: 100%"></td>=20
+                              <td class=3D"heading" style=3D"border-collaps=
+e: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; padding-top=
+: 3px; vertical-align: top"> <strong>Jan Ruszkiewicz</strong> an 05.07.2023=
+ 09:05:30 </td>=20
+                              </tr>=20
+                              <tr>=20
+                              <td colspan=3D"2" class=3D"spacer-10" style=
+=3D"border-collapse: collapse; border-spacing: 0px; color: #172b4d; padding=
+: 0px; height: 10px; font-size: 10px; line-height: 10px" height=3D"10">&nbs=
+p;</td>=20
+                              </tr>=20
+                              <tr class=3D"group-content field-update">=20
+                              <td class=3D"author spacer" style=3D"border-c=
+ollapse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; width=
+: 32px; vertical-align: top" width=3D"32"></td>=20
+                              <td class=3D"updates-diff updates-diff-conten=
+t" style=3D"border-collapse: collapse; border-spacing: 0px; color: #172b4d;=
+ padding: 0px; vertical-align: top; text-align: left; padding-bottom: 5px">=
+ <p style=3D"margin: 1em 0; margin: 0; margin-top: 0">Hallo Herr Hildebrand=
+t,</p> <p style=3D"margin: 1em 0; margin: 0">entschuldigen Sie bitte die sp=
+=C3=A4te R=C3=BCckmeldung.</p> <p style=3D"margin: 1em 0; margin: 0">Sie k=
+=C3=B6nnen gern heute oder morgen ab 9 Uhr bei uns im IT-Servicezentrum vor=
+beikommen.&nbsp;</p> <p style=3D"margin: 1em 0; margin: 0">Beste Gr=C3=BC=
+=C3=9Fe,<br> Jan Ruszkiewicz</p> </td>=20
+                              </tr>=20
+                              </tbody>
+                              </table>=20
+                              <table style=3D"border-collapse: collapse; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt">=20
+                              <tbody>
+                              <tr>=20
+                              <td class=3D"spacer-20" style=3D"border-colla=
+pse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; height: 2=
+0px; font-size: 20px; line-height: 20px" height=3D"20">&nbsp;</td>=20
+                              </tr>=20
+                              </tbody>
+                              </table>=20
+                              <table width=3D"100%" class=3D"group comments=
+-group" style=3D"border-collapse: collapse; mso-table-lspace: 0pt; mso-tabl=
+e-rspace: 0pt">=20
+                              <tbody>
+                              <tr class=3D"group-header">=20
+                              <td class=3D"author" style=3D"border-collapse=
+: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; width: 32px;=
+ vertical-align: top" width=3D"32"><img src=3D"cid:jira-generated-image-ava=
+tar-3e14e5b0-6f61-4b3a-8fbc-26a2017a16c1" width=3D"24" height=3D"24" alt=3D=
+"cid:jira-generated-image-avatar-3e14e5b0-6f61-4b3a-8fbc-26a2017a16c1" styl=
+e=3D"outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;=
+ display: block; border-radius: 100%"></td>=20
+                              <td class=3D"heading" style=3D"border-collaps=
+e: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; padding-top=
+: 3px; vertical-align: top"> <strong>Jan Ruszkiewicz</strong> an 05.07.2023=
+ 09:09:19 </td>=20
+                              </tr>=20
+                              <tr>=20
+                              <td colspan=3D"2" class=3D"spacer-10" style=
+=3D"border-collapse: collapse; border-spacing: 0px; color: #172b4d; padding=
+: 0px; height: 10px; font-size: 10px; line-height: 10px" height=3D"10">&nbs=
+p;</td>=20
+                              </tr>=20
+                              <tr class=3D"group-content field-update">=20
+                              <td class=3D"author spacer" style=3D"border-c=
+ollapse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; width=
+: 32px; vertical-align: top" width=3D"32"></td>=20
+                              <td class=3D"updates-diff updates-diff-conten=
+t" style=3D"border-collapse: collapse; border-spacing: 0px; color: #172b4d;=
+ padding: 0px; vertical-align: top; text-align: left; padding-bottom: 5px">=
+ <p style=3D"margin: 1em 0; margin: 0; margin-top: 0">Ich gehe stark davon =
+aus, dass es sich um einen lokalen Fehler auf dem Ger=C3=A4t handelt.</p> <=
+/td>=20
+                              </tr>=20
+                              </tbody>
+                              </table>=20
+                              <table style=3D"border-collapse: collapse; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt">=20
+                              <tbody>
+                              <tr>=20
+                              <td class=3D"spacer-20" style=3D"border-colla=
+pse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; height: 2=
+0px; font-size: 20px; line-height: 20px" height=3D"20">&nbsp;</td>=20
+                              </tr>=20
+                              </tbody>
+                              </table> </td>=20
+                              </tr>=20
+                              </tbody>
+                              </table>=20
+                              <table class=3D"footer-text" width=3D"100%" s=
+tyle=3D"border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace:=
+ 0pt; color: #5e6c84; font-size: 12px">=20
+                              <tbody>
+                              <tr>
+                              <td class=3D"spacer-10" style=3D"border-colla=
+pse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px; height: 1=
+0px; font-size: 10px; line-height: 10px" height=3D"10">&nbsp;</td>
+                              </tr>=20
+                              <tr>=20
+                              <td align=3D"left" width=3D"100%" style=3D"bo=
+rder-collapse: collapse; border-spacing: 0px; color: #172b4d; padding: 0px"=
+> Diese Nachricht wurde von Atlassian Jira =C3=BCbermittelt (V. 9.4.3#94000=
+3<span title=3D"84833fe47f7e7617a6279485112b627916e8cd41" data-commit-id=3D=
+"84833fe47f7e7617a6279485112b627916e8cd41}">-sha1:84833fe</span>) </td>=20
+                              <td style=3D"border-collapse: collapse; borde=
+r-spacing: 0px; color: #172b4d; padding: 0px"> <img src=3D"https://serviced=
+esk.uni-jena.de/images/mail/atlassian-email-logo.png" alt=3D"Atlassian logo=
+" title=3D"Atlassian logo" width=3D"127" height=3D"16" class=3D"image_fix" =
+style=3D"outline: none; text-decoration: none; -ms-interpolation-mode: bicu=
+bic; display: block; padding-top: 20px"> </td>=20
+                              </tr>=20
+                              <tr class=3D"spacer-10" style=3D"height: 10px=
+; font-size: 10px; line-height: 10px" height=3D"10"></tr>=20
+                              <tr>=20
+                              <td align=3D"left" style=3D"border-collapse: =
+collapse; border-spacing: 0px; color: #172b4d; padding: 0px"> Wenn Bildanh=
+=C3=A4nge nicht angezeigt werden, lesen Sie <a href=3D"https://confluence.a=
+tlassian.com/display/JIRAKB/Image&#43;attachments&#43;are&#43;not&#43;displ=
+ayed&#43;in&#43;emails" style=3D"color: #0052cc">diesen Artikel</a>.<br> </=
+td>=20
+                              </tr>=20
+                              </tbody>
+                              </table> </td>
+                              </tr>
+                            </tbody>
+                        </table> </td>
+                </tr>
+            </tbody>
+        </table>  =20
+    </body>
+</html>=
+
+------=_Part_14047_148859442.1688541335280
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Disposition: inline
+Content-ID: <jira-generated-image-avatar-7744b528-69dd-4bc8-9b4d-2d12acedfb14>
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHXRFWHRqaXJhLXN5c3RlbS1pbWFn
+ZS10eXBlAGF2YXRhcuQCGmEAAADISURBVHjaY2CgBkjeZRMAxC+A+D+R+DkQ+yMbQIpmuCHIBvwn
+B+M0oP54/P/zrw7///7n2/9ff3/8v/b2zP/O0znEGdByMvX/zz8//qODv//+/p98voKwAbffX/qP
+C7z9/uJ/yi5b/Ab8+fv7Pz5QdNAfvwFvvj3HqRkUHhl7nPAbsOLmJJwG7HqwgnAYgEIbMwD//N/7
+aO3/tN32hA3oPVv4/9yrQ/8bjyf+n3iu7P+UC5Uo/iYqHZCTkJ5TmpT9STQENTNRAgCojxeiycVP
+XgAAAABJRU5ErkJggg==
+
+------=_Part_14047_148859442.1688541335280
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Disposition: inline
+Content-ID: <jira-generated-image-avatar-3e14e5b0-6f61-4b3a-8fbc-26a2017a16c1>
+
+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
+mfXvHQAAAABJRU5ErkJggg==
+
+------=_Part_14047_148859442.1688541335280--

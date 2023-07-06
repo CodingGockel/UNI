@@ -13,31 +13,35 @@ import javax.swing.*;
 public class SettingsDialog extends JDialog {
 
     private ConfigUtility configUtil;
-
-    private JLabel labelHost = new JLabel("Host name: ");
-    private JLabel labelPort = new JLabel("Port number: ");
+    private JLabel labelHost = new JLabel("Host out name: ");
+    private JLabel labelPort = new JLabel("Port out number: ");
+    private JLabel labelHostIn = new JLabel("Host in name: ");
+    private JLabel labelCheckIMAP = new JLabel("IMAP: ");
+    private JCheckBox checkIMAP = new JCheckBox(" ");
+    private JLabel labelPortIn = new JLabel("Port in number: ");
     private JLabel labelUser = new JLabel("Username: ");
     private JLabel labelPass = new JLabel("Password: ");
     private JLabel labelSender = new JLabel("Sender Mail: ");
     private JLabel labelSSL = new JLabel("SSL: ");
     private JLabel labelTLS = new JLabel("TLS: ");
+    private JLabel labelArchivePath = new JLabel("Archive: ");
     private JTextField textHost = new JTextField(20);
     private JTextField textPort = new JTextField(20);
+    private JTextField textHostIn = new JTextField(20);
+    private JTextField textPortIn = new JTextField(20);
     private JTextField textUser = new JTextField(20);
     private JPasswordField textPass = new JPasswordField(20);
     private JTextField textSender = new JTextField(30);
     private JCheckBox checkSSL = new JCheckBox(" ");
     private JCheckBox checkTLS = new JCheckBox(" ");
+    private JTextField textArchivePath = new JTextField(20);
     private JButton buttonSave = new JButton("Save");
 
     public SettingsDialog(JFrame parent, ConfigUtility configUtil) {
         super(parent, "SMTP Settings", true);
         this.configUtil = configUtil;
-
         setupForm();
-
         loadSettings();
-
         pack();
         setLocationRelativeTo(null);
     }
@@ -47,7 +51,7 @@ public class SettingsDialog extends JDialog {
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 0;
-        constraints.insets = new Insets(10, 10, 7, 10);
+        constraints.insets = new Insets(11, 11, 11, 11);
         constraints.anchor = GridBagConstraints.WEST;
 
         add(labelHost, constraints);
@@ -64,41 +68,68 @@ public class SettingsDialog extends JDialog {
 
         constraints.gridy = 2;
         constraints.gridx = 0;
+        add(labelHostIn, constraints);
+
+        constraints.gridx = 1;
+        add(textHostIn, constraints);
+
+        constraints.gridy = 3;
+        constraints.gridx = 0;
+        add(labelCheckIMAP, constraints);
+
+        constraints.gridx = 1;
+        add(checkIMAP, constraints);
+
+        constraints.gridy = 4;
+        constraints.gridx = 0;
+        add(labelPortIn, constraints);
+
+        constraints.gridx = 1;
+        add(textPortIn, constraints);
+
+        constraints.gridy = 5;
+        constraints.gridx = 0;
         add(labelUser, constraints);
 
         constraints.gridx = 1;
         add(textUser, constraints);
 
-        constraints.gridy = 3;
+        constraints.gridy = 6;
         constraints.gridx = 0;
         add(labelPass, constraints);
 
         constraints.gridx = 1;
         add(textPass, constraints);
 
-        constraints.gridy = 4;
+        constraints.gridy = 7;
         constraints.gridx = 0;
         add(labelSender, constraints);
 
         constraints.gridx = 1;
         add(textSender, constraints);
 
-        constraints.gridy = 5;
+        constraints.gridy = 8;
         constraints.gridx = 0;
         add(labelSSL, constraints);
 
         constraints.gridx = 1;
         add(checkSSL, constraints);
 
-        constraints.gridy = 6;
+        constraints.gridy = 9;
         constraints.gridx = 0;
         add(labelTLS, constraints);
 
         constraints.gridx = 1;
         add(checkTLS, constraints);
 
+        constraints.gridy = 10;
+        constraints.gridx = 0;
+        add(labelArchivePath, constraints);
 
-        constraints.gridy = 7;
+        constraints.gridx = 1;
+        add(textArchivePath, constraints);
+
+        constraints.gridy = 11;
         constraints.gridx = 0;
         constraints.gridwidth = 2;
         constraints.anchor = GridBagConstraints.CENTER;
@@ -115,40 +146,54 @@ public class SettingsDialog extends JDialog {
     private void loadSettings() {
         Properties configProps = null;
         try {
-            configProps = configUtil.loadProperties();
+            configProps = this.configUtil.loadProperties();
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this,
                     "Error reading settings: " + ex.getMessage(),
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
 
-        textHost.setText(configProps.getProperty("mail.smtp.host"));
-        textPort.setText(configProps.getProperty("mail.smtp.port"));
-        textUser.setText(configProps.getProperty("mail.user"));
-        textPass.setText(configProps.getProperty("mail.password"));
-        textSender.setText(configProps.getProperty("sender.mail"));
-        if(configProps.containsKey("mail.smtp.ssl.enable")){
-            checkSSL.setSelected(true);
+        this.textHost.setText(configProps.getProperty("mail.smtp.host"));
+        this.textPort.setText(configProps.getProperty("mail.smtp.port"));
+        if(configProps.getProperty("isIMAP").equals("true")){
+            this.checkIMAP.setSelected(true);
+            this.textHostIn.setText(configProps.getProperty("mail.imaps.host"));
+            this.textPortIn.setText(configProps.getProperty("mail.imaps.port"));
         }else{
-            checkSSL.setSelected(false);
+            this.checkIMAP.setSelected(false);
+            this.textHostIn.setText(configProps.getProperty("mail.pop3s.host"));
+            this.textPortIn.setText(configProps.getProperty("mail.pop3s.port"));
         }
+        this.textUser.setText(configProps.getProperty("mail.user"));
+        this.textPass.setText(configProps.getProperty("mail.password"));
+        this.textSender.setText(configProps.getProperty("sender.mail"));
 
-        if(configProps.containsKey("mail.smtp.starttls.enable")){
-            checkTLS.setSelected(true);
+        if(configProps.getProperty("mail.smtp.ssl.enable").equals("true")){
+            this.checkSSL.setSelected(true);
         }else{
-            checkTLS.setSelected(false);
+            this.checkSSL.setSelected(false);
         }
+        if(configProps.getProperty("mail.smtp.starttls.enable").equals("true")){
+            this.checkTLS.setSelected(true);
+        }else{
+            this.checkTLS.setSelected(false);
+        }
+        this.textArchivePath.setText(configProps.getProperty("archive.path"));
     }
 
     private void buttonSaveActionPerformed(ActionEvent event) {
         try {
-            configUtil.saveProperties(textHost.getText(),
-                    textPort.getText(),
-                    textUser.getText(),
-                    new String(textPass.getPassword()),
-                    textSender.getText(),
-                    checkSSL.isSelected(),
-                    checkTLS.isSelected());
+            this.configUtil.saveProperties(this.textHost.getText(),
+                    this.textPort.getText(),
+                    this.textHostIn.getText(),
+                    this.textPortIn.getText(),
+                    this.textUser.getText(),
+                    new String(this.textPass.getPassword()),
+                    this.textSender.getText(),
+                    this.checkSSL.isSelected(),
+                    this.checkTLS.isSelected(),
+                    this.checkIMAP.isSelected(),
+                    this.textArchivePath.getText());
             JOptionPane.showMessageDialog(SettingsDialog.this,
                     "Properties were saved successfully!");
             dispose();

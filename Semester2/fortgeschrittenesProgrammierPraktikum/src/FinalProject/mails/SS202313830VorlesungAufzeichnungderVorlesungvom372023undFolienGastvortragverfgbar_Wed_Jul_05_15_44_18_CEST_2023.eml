@@ -1,0 +1,142 @@
+Received: from exchange1.ads.uni-jena.de (10.139.32.80) by
+ exchange2.ads.uni-jena.de (10.139.32.81) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.1.2507.27 via Mailbox Transport; Wed, 5 Jul 2023 15:44:18 +0200
+Received: from exchange2.ads.uni-jena.de (10.139.32.81) by
+ exchange1.ads.uni-jena.de (10.139.32.80) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.1.2507.27; Wed, 5 Jul 2023 15:44:18 +0200
+Received: from smtp-intra-01.rz.uni-jena.de (10.138.192.40) by
+ exchange2.ads.uni-jena.de (10.139.32.81) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.1.2507.27 via Frontend Transport; Wed, 5 Jul 2023 15:44:18 +0200
+Received: from moodle-app-01.rz.uni-jena.de (moodle-app-01.rz.uni-jena.de [10.139.32.50])
+	by smtp-intra-01.rz.uni-jena.de (Postfix) with ESMTPSA id 4Qx19G45cmz2wvN
+	for <moritz.hahn@uni-jena.de>; Wed,  5 Jul 2023 15:44:18 +0200 (CEST)
+Received: by moodle-app-01.rz.uni-jena.de (Postfix, from userid 33)
+	id 4Qx19G3X2hzZH; Wed,  5 Jul 2023 15:44:18 +0200 (CEST)
+To: Moritz Hahn <moritz.hahn@uni-jena.de>
+Subject: =?utf-8?B?U1MgMjAyMyAtIDEzODMwIChWb3JsZXN1bmcpOiBBdWZ6ZWljaG51bmcgZGVy?=  =?utf-8?B?IFZvcmxlc3VuZyB2b20gMy43LjIwMjMgdW5kIEZvbGllbiBHYXN0dm9ydHJh?=  =?utf-8?B?ZyB2ZXJmw7xnYmFy?=
+Date: Wed, 5 Jul 2023 15:44:18 +0200
+From: =?utf-8?B?R2VyaGFyZCBTdHJ1YmJlICjDvGJlciBtb29kbGUudW5pLWplbmEuZGUp?=
+	<gerhard.strubbe@uni-jena.de>
+Reply-To: Gerhard Strubbe <gerhard.strubbe@uni-jena.de>
+Message-ID: <8bec51f532ebbb8ed4ec382046c3e6be2ca35d1aab7ac62b66ae262ce09c4670@moodle.uni-jena.de>
+X-Mailer: PHPMailer 6.5.3 (https://github.com/PHPMailer/PHPMailer)
+List-Id: =?utf-8?B?IkFua8O8bmRpZ3VuZ2VuIiA8bW9vZGxlZm9ydW02ODQ1MkBtb29kbGUudW4=?=
+ =?utf-8?B?aS1qZW5hLmRlPg==?=
+List-Help: https://moodle.uni-jena.de/mod/forum/view.php?f=68452
+X-Course-Id: 45117
+X-Course-Name: =?utf-8?B?UFLDhFNFTlorT05MSU5FIGltIFNvU2UgMjM6IFByb2pla3RtYW5hZ2VtZW4=?=
+ =?utf-8?B?dCAoQVNRKQ==?=
+Precedence: Bulk
+X-Auto-Response-Suppress: All
+Auto-Submitted: auto-generated
+List-Unsubscribe: <>
+Thread-Topic: =?utf-8?B?U1MgMjAyMyAtIDEzODMwIChWb3JsZXN1bmcpOiBBdWZ6ZWljaG51bmcgZGVy?=
+ =?utf-8?B?IFZvcmxlc3VuZyB2b20gMy43LjIwMjMgdW5kIEZvbGllbiBHYXN0dm9ydHJh?=
+ =?utf-8?B?ZyB2ZXJmw7xnYmFy?=
+Thread-Index: 8bec51f532ebbb8ed4ec382046c3
+Content-Type: multipart/alternative;
+	boundary="b1_N95ufA5digaxG1bxf7EmTURKAlJged8XPxZ3lNI8"
+Return-Path: noreply-moodle@uni-jena.de
+X-MS-Exchange-Organization-Network-Message-Id: 26155d4b-1137-4b37-1c42-08db7d5dee5f
+X-MS-Exchange-Organization-AuthSource: exchange2.ads.uni-jena.de
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:00.1709818
+X-MS-Exchange-Processed-By-BccFoldering: 15.01.2507.027
+MIME-Version: 1.0
+
+--b1_N95ufA5digaxG1bxf7EmTURKAlJged8XPxZ3lNI8
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+=0ASS 2023 - 13830 (Vorlesung) -> Foren -> Ank=C3=BCndigungen -> Aufzeichnu=
+ng der=0AVorlesung vom 3.7.2023 und Folien Gastvortrag verf=C3=BCgbar=0Ahtt=
+ps://moodle.uni-jena.de/mod/forum/discuss.php?d=3D104064#p167832=0AAufzeich=
+nung der Vorlesung vom 3.7.2023 und Folien Gastvortrag verf=C3=BCgbar=0Avon=
+ Gerhard Strubbe - Mittwoch, 5. Juli 2023, 15:13=0A------------------------=
+---------------------------------------------=0ALiebe Studierende,=0A=0Adie=
+ Aufzeichnung der Vorlesung 'Projektmanagement' vom 3.7.2023 sowie die=0AFo=
+lien des Gastvortrags der Jena-Optronik stehen nun in unserem Moodle-Raum=
+=0Azur Verf=C3=BCgung.=0A=0AGerhard Strubbe=0A=0ALehrbeauftragter 'Projektm=
+anagement'=0A=0AFakult=C3=A4t f=C3=BCr Mathematik und Informatik=0A=0A-----=
+----------------------------------------------------------------=0AThis is =
+a copy of a message posted in SS 2023 - 13830 (Vorlesung).=0A=0AEinstellung=
+en f=C3=BCr die Forumszusammenfassung =C3=A4ndern:=0Ahttps://moodle.uni-jen=
+a.de/mod/forum/index.php?id=3D45117=0A
+--b1_N95ufA5digaxG1bxf7EmTURKAlJged8XPxZ3lNI8
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv class=3D"navbar">=0A=
+    <a target=3D"_blank" href=3D"https://moodle.uni-jena.de/course/view.php=
+?id=3D45117">SS 2023 - 13830 (Vorlesung)</a>=0A=
+    =C2=BB=0A=
+    <a target=3D"_blank" href=3D"https://moodle.uni-jena.de/mod/forum/index=
+.php?id=3D45117">Foren</a>=0A=
+    =C2=BB=0A=
+    <a target=3D"_blank" href=3D"https://moodle.uni-jena.de/mod/forum/view.=
+php?f=3D68452">Ank=C3=BCndigungen</a>=0A=
+    =C2=BB=0A=
+    <a target=3D"_blank" href=3D"https://moodle.uni-jena.de/mod/forum/discu=
+ss.php?d=3D104064">Aufzeichnung der Vorlesung vom 3.7.2023 und Folien Gastv=
+ortrag verf=C3=BCgbar</a>=0A=
+</div>=0A=
+=0A=
+<table border=3D"0" cellpadding=3D"3" cellspacing=3D"0" class=3D"forumpost"=
+>=0A=
+    <tr class=3D"header">=0A=
+        <td width=3D"35" valign=3D"top" class=3D"picture left">=0A=
+            <a href=3D"https://moodle.uni-jena.de/user/view.php?id=3D48380&=
+amp;course=3D45117" class=3D"d-inline-block aabtn"><img src=3D"https://mood=
+le.uni-jena.de/pluginfile.php/558705/user/icon/boost/f2?rev=3D2371815" clas=
+s=3D"userpicture" width=3D"35" height=3D"35" alt=3D""></a>=0A=
+        </td>=0A=
+        <td class=3D"topic starter">=0A=
+            <div class=3D"subject">=0A=
+                Aufzeichnung der Vorlesung vom 3.7.2023 und Folien Gastvort=
+rag verf=C3=BCgbar=0A=
+            </div>=0A=
+            <div class=3D"author">=0A=
+                von <a target=3D"_blank" href=3D"https://moodle.uni-jena.de=
+/user/view.php?id=3D48380&amp;course=3D45117">Gerhard Strubbe</a> - Mittwoc=
+h, 5. Juli 2023, 15:13=0A=
+            </div>=0A=
+        </td>=0A=
+    </tr>=0A=
+    <tr>=0A=
+        <td class=3D"left side" valign=3D"top">=0A=
+                &nbsp;=0A=
+        </td>=0A=
+        <td class=3D"content">=0A=
+            <p dir=3D"ltr" style=3D"text-align:left;"></p><p dir=3D"ltr">Li=
+ebe Studierende,</p><p dir=3D"ltr">die Aufzeichnung der Vorlesung 'Projektm=
+anagement' vom 3.7.2023 sowie die Folien des Gastvortrags der Jena-Optronik=
+ stehen nun in unserem Moodle-Raum zur Verf=C3=BCgung.</p><p dir=3D"ltr">Ge=
+rhard Strubbe</p><p dir=3D"ltr">Lehrbeauftragter 'Projektmanagement'</p><p =
+dir=3D"ltr">Fakult=C3=A4t f=C3=BCr Mathematik und Informatik</p><br><p></p>=
+=0A=
+=0A=
+            <div class=3D"commands">=0A=
+            </div>=0A=
+=0A=
+            <div class=3D"link">=0A=
+                <a target=3D"_blank" href=3D"https://moodle.uni-jena.de/mod=
+/forum/discuss.php?d=3D104064#p167832">=0A=
+                    Diskussion im Forum zeigen=0A=
+                </a>=0A=
+            </div>=0A=
+        </td>=0A=
+    </tr>=0A=
+</table>=0A=
+=0A=
+<hr>=0A=
+<div class=3D"mdl-align unsubscribelink">=0A=
+    <a href=3D"https://moodle.uni-jena.de/mod/forum/index.php?id=3D45117">E=
+instellungen zur Zusammenfassung neuer Forenbeitr=C3=A4ge =C3=A4ndern</a>=
+=0A=
+</div>
+
+--b1_N95ufA5digaxG1bxf7EmTURKAlJged8XPxZ3lNI8--
