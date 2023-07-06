@@ -76,7 +76,6 @@ public class EmailUtility {
             Message[] messagesInFolder = inbox.getMessages();
             for(Message m: messagesInFolder){
                 messages.add(new MimeMessage((MimeMessage) m));
-                System.out.println(m.getFlags());
                 saveMail(m,props.getProperty("archive.path"));
             }
             inbox.close(false);
