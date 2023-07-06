@@ -2,11 +2,6 @@ package FinalProject;
 
 import java.io.*;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.activation.DataHandler;
-import javax.activation.DataSource;
-import javax.activation.FileDataSource;
 import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -81,6 +76,7 @@ public class EmailUtility {
             Message[] messagesInFolder = inbox.getMessages();
             for(Message m: messagesInFolder){
                 messages.add(new MimeMessage((MimeMessage) m));
+                System.out.println(m.getFlags());
                 saveMail(m,props.getProperty("archive.path"));
             }
             inbox.close(false);
@@ -88,7 +84,6 @@ public class EmailUtility {
         } catch (MessagingException ex) {
             ex.printStackTrace();
         }
-
         return messages;
     }
     public static List<Message> getStoredMessages(String path) throws Exception {

@@ -15,7 +15,6 @@ public class ConfigUtility {
 
     public Properties loadProperties() throws IOException {
         Properties defaultProps = new Properties();
-        // sets default properties
         defaultProps.setProperty("mail.store.protocol", "imaps");
         defaultProps.setProperty("mail.imaps.host", "imap.gmail.com");
         defaultProps.setProperty("mail.imaps.port", "993");
@@ -33,7 +32,6 @@ public class ConfigUtility {
         defaultProps.setProperty("archive.path", "mails\\");
         this.configProps = new Properties(defaultProps);
 
-        // loads properties from file
         if (this.configFile.exists()) {
             InputStream inputStream = new FileInputStream(this.configFile);
             this.configProps.load(inputStream);
@@ -42,7 +40,6 @@ public class ConfigUtility {
 
         return this.configProps;
     }
-
     public void saveProperties(String hostIn, String portIn, String hostOut, String portOut, String user, String pass, String sender, boolean ssl, boolean tls, boolean isIMAP, String archivePath) throws IOException {
         if(isIMAP){
             this.configProps.setProperty("mail.store.protocol", "imaps");

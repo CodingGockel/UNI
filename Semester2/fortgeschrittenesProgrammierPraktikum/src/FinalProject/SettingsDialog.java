@@ -45,7 +45,6 @@ public class SettingsDialog extends JDialog {
         pack();
         setLocationRelativeTo(null);
     }
-
     private void setupForm() {
         setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
@@ -142,7 +141,6 @@ public class SettingsDialog extends JDialog {
             }
         });
     }
-
     private void loadSettings() {
         Properties configProps = null;
         try {

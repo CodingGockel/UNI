@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.*;
 import javax.mail.*;
 import java.util.List;
-import javax.mail.internet.MimeMultipart;
 
 class MailList extends JPanel implements ListSelectionListener {
     private JList list;
@@ -27,16 +26,20 @@ class MailList extends JPanel implements ListSelectionListener {
         try{
             this.configUtil.loadProperties();
             this.messages = EmailUtility.getAllMailsFromServer(this.configUtil.getConfigProps());
+            Collections.reverse(this.messages);
             int i = 0;
-            for(Message m:messages){
-                this.listModel.addElement(m.getSubject());
+            for(Message m:this.messages){
+                if(m.getFlags().contains(Flags.Flag.RECENT)){
+                    this.listModel.addElement("[NEW]" + m.getSubject());
+                }else{
+                    this.listModel.addElement(m.getSubject());
+                }
                 messageMap.put(i, m);
                 i++;
             }
         }catch(MessagingException | IOException ex){
             ex.printStackTrace();
         }
-
         list = new JList(listModel);
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         list.setSelectedIndex(0);
@@ -77,16 +80,20 @@ class MailList extends JPanel implements ListSelectionListener {
             }
         }
     }
-
     class UpdateListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             try{
                 listModel.clear();
                 configUtil.loadProperties();
                 messages = EmailUtility.getAllMailsFromServer(configUtil.getConfigProps());
+                Collections.reverse(messages);
                 int i = 0;
                 for(Message m:messages){
-                    listModel.addElement(m.getSubject());
+                    if(m.getFlags().contains(Flags.Flag.RECENT)){
+                        listModel.addElement("[NEW]" + m.getSubject());
+                    }else {
+                        listModel.addElement(m.getSubject());
+                    }
                     messageMap.put(i, m);
                     i++;
                 }
@@ -95,7 +102,6 @@ class MailList extends JPanel implements ListSelectionListener {
             }
         }
     }
-
     public void valueChanged(ListSelectionEvent e) {
         if (e.getValueIsAdjusting() == false) {
 

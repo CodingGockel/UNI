@@ -50,7 +50,6 @@ class DisplayEmails extends JFrame {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {

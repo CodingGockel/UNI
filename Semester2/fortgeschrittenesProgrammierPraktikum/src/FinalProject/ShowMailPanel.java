@@ -1,14 +1,10 @@
 package FinalProject;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.mail.internet.MimeMultipart;
 import javax.swing.*;
-import javax.swing.event.*;
 import java.io.IOException;
-import java.util.*;
 import javax.mail.*;
-import java.util.List;
 import javax.mail.internet.InternetAddress;
 public class ShowMailPanel extends JFrame{
     private JTextArea emailTextArea;
