@@ -1,0 +1,304 @@
+% ----------------------- TODO ---------------------------
+% Diese Daten müssen pro Blatt angepasst werden:
+\newcommand{\NUMBER}{2}
+\newcommand{\EXERCISES}{4}
+% Diese Daten müssen einmalig pro Vorlesung angepasst werden:
+\newcommand{\COURSE}{Diskrete Strukturen I}
+\newcommand{\TUTOR}{Jörg Bader}
+\newcommand{\STUDENTA}{Moritz Hahn}
+\newcommand{\STUDENTB}{}
+\newcommand{\STUDENTC}{}
+\newcommand{\DEADLINE}{26.10.2024}
+% ----------------------- TODO ---------------------------
+
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{forloop}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{fancybox}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float}
+\restylefloat{table}
+%Größe der Ränder setzen
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+
+%Kopf- und Fußzeile
+\pagestyle {fancy}
+\fancyhead[L]{Tutor: \TUTOR}
+\fancyhead[C]{\COURSE}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{}
+\fancyfoot[C]{} 
+\fancyfoot[R]{Seite \thepage /\pageref*{LastPage}}
+
+%Formatierung der Überschrift, hier nichts ändern
+\def\header#1#2{
+  \begin{center}
+    {\Large Übungsblatt #1}\\
+    {(Abgabetermin #2)}
+  \end{center}
+}
+
+%Definition der Punktetabelle, hier nichts ändern
+\newcounter{punktelistectr}
+\newcounter{punkte}
+\newcommand{\punkteliste}[2]{%
+  \setcounter{punkte}{#2}%
+  \addtocounter{punkte}{-#1}%
+  \stepcounter{punkte}%<-- also punkte = m-n+1 = Anzahl Spalten[1]
+  \begin{center}%
+  \begin{tabularx}{\linewidth}[]{@{}*{\thepunkte}{>{\centering\arraybackslash} X|}@{}>{\centering\arraybackslash}X}
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        \thepunktelistectr &
+      }
+      #2 &  $\Sigma$ \\
+      \hline
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        &
+      } &\\
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        &
+      } &\\
+    \end{tabularx}
+  \end{center}
+}
+
+\begin{document}
+
+\begin{tabularx}{\linewidth}{m{0.2 \linewidth}X}
+  \begin{minipage}{\linewidth}
+    \STUDENTA\\
+    \STUDENTB\\
+    \STUDENTC
+  \end{minipage} & \begin{minipage}{\linewidth}
+    \punkteliste{1}{\EXERCISES}
+  \end{minipage}\\
+\end{tabularx}
+
+\header{Nr. \NUMBER}{\DEADLINE}
+
+Die vier zusammengesetzten Aussagen lauten:
+\section*{Aufgabe 1}
+
+\subsection*{(a)}
+\[
+(A \land B) \rightarrow C
+\]
+\textbf{Kontraposition:} $\neg C \rightarrow \neg (A \land B)$ \\
+\textbf{In natürlicher Sprache:} Wenn der Benutzer nicht auf die Datenbank zugreifen kann, dann ist er entweder nicht angemeldet oder hat nicht die erforderlichen Rechte.
+
+\subsection*{(b)}
+\[
+\neg A \lor B
+\]
+(Keine Implikation, daher keine Kontraposition erforderlich.)
+
+\subsection*{(c)}
+\[
+\neg A \rightarrow \neg C
+\]
+\textbf{Kontraposition:} $C \rightarrow A$ \\
+\textbf{In natürlicher Sprache:} Wenn der Benutzer auf die Datenbank zugreifen kann, dann ist er angemeldet.
+
+\subsection*{(d)}
+\[
+C \rightarrow (A \land B)
+\]
+\textbf{Kontraposition:} $\neg (A \land B) \rightarrow \neg C$ \\
+\textbf{In natürlicher Sprache:} Wenn der Benutzer nicht angemeldet ist oder nicht die erforderlichen Rechte hat, kann er nicht auf die Datenbank zugreifen.
+
+
+\section*{Aufgabe 2}
+\subsection*{(a)}
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$A$ & $B$ & $A \land B$ & $\neg (A \land B)$ & $\neg A \lor \neg B$ \\
+\hline
+W & W & W & F & F \\
+W & F & F & W & W \\
+F & W & F & W & W \\
+F & F & F & W & W \\
+\hline
+\end{tabular}
+
+\textbf{Ergebnis}: $\neg (A \land B)$ und $\neg A \lor \neg B$ haben in allen Fällen die gleichen Werte, also gilt $\neg (A \land B) \Leftrightarrow \neg A \lor \neg B$.
+
+\subsection*{(b)}
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$A$ & $B$ & $A \lor B$ & $\neg (A \lor B)$ & $\neg A \land \neg B$ \\
+\hline
+W & W & W & F & F \\
+W & F & W & F & F \\
+F & W & W & F & F \\
+F & F & F & W & W \\
+\hline
+\end{tabular}
+
+\textbf{Ergebnis}: $\neg (A \lor B)$ und $\neg A \land \neg B$ haben in allen Fällen die gleichen Werte, also gilt $\neg (A \lor B) \Leftrightarrow \neg A \land \neg B$.
+
+\subsection*{(c)}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$A$ & $B$ & $C$ & $B \land C$ & $A \lor (B \land C)$ & $A \lor B$ & $A \lor C$ & $(A \lor B) \land (A \lor C)$ \\
+\hline
+W & W & W & W & W & W & W & W \\
+W & W & F & F & W & W & W & W \\
+W & F & W & F & W & W & W & W \\
+W & F & F & F & W & W & W & W \\
+F & W & W & W & W & W & W & W \\
+F & W & F & F & F & W & F & F \\
+F & F & W & F & F & F & W & F \\
+F & F & F & F & F & F & F & F \\
+\hline
+\end{tabular}
+
+\textbf{Ergebnis}: $A \lor (B \land C)$ und $(A \lor B) \land (A \lor C)$ haben in allen Fällen die gleichen Werte, also gilt $A \lor (B \land C) \Leftrightarrow (A \lor B) \land (A \lor C)$.
+
+\subsection*{(d)}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$A$ & $B$ & $C$ & $B \lor C$ & $A \land (B \lor C)$ & $A \land B$ & $A \land C$ & $(A \land B) \lor (A \land C)$ \\
+\hline
+W & W & W & W & W & W & W & W \\
+W & W & F & W & W & W & F & W \\
+W & F & W & W & W & F & W & W \\
+W & F & F & F & F & F & F & F \\
+F & W & W & W & F & F & F & F \\
+F & W & F & W & F & F & F & F \\
+F & F & W & W & F & F & F & F \\
+F & F & F & F & F & F & F & F \\
+\hline
+\end{tabular}
+
+\textbf{Ergebnis}: $A \land (B \lor C)$ und $(A \land B) \lor (A \land C)$ haben in allen Fällen die gleichen Werte, also gilt $A \land (B \lor C) \Leftrightarrow (A \land B) \lor (A \land C)$.
+
+\subsection*{(e)}
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$A$ & $B$ & $C$ & $A \rightarrow B$ & $B \rightarrow C$ & $(A \rightarrow B) \land (B \rightarrow C)$ & $A \rightarrow C$ \\
+\hline
+W & W & W & W & W & W & W \\
+W & W & F & W & F & F & F \\
+W & F & W & F & W & F & W \\
+W & F & F & F & W & F & F \\
+F & W & W & W & W & W & W \\
+F & W & F & W & F & F & W \\
+F & F & W & W & W & W & W \\
+F & F & F & W & W & W & W \\
+\hline
+\end{tabular}
+
+\textbf{Ergebnis}: Wenn $(A \rightarrow B) \land (B \rightarrow C)$ wahr ist, dann ist auch $A \rightarrow C$ wahr. Daher gilt $(A \rightarrow B) \land (B \rightarrow C) \Rightarrow A \rightarrow C$.
+ 
+\section*{Aufgabe 3}
+
+\subsection*{(a)}
+
+\[
+A \lor B \equiv (A \mid A) \mid (B \mid B)
+\]
+
+\begin{itemize}
+    \item $A \mid A = \neg (A \land A) = \neg A$, also ist $(A \mid A)$ eine Negation von $A$.
+    \item $B \mid B = \neg (B \land B) = \neg B$, also ist $(B \mid B)$ eine Negation von $B$.
+    \item $(A \mid A) \mid (B \mid B) = \neg(\neg A \land \neg B) = A \lor B$ nach den De-Morgan-Gesetzen.
+\end{itemize}
+
+\textbf{Ergebnis}: Die Disjunktion $A \lor B$ kann dargestellt werden als $(A \mid A) \mid (B \mid B)$.
+
+\subsection*{(b)}
+
+Betrachten wir den Ausdruck:
+
+\[
+((A \mid A) \mid (B \mid B)) \mid ((A \mid A) \mid (B \mid B))
+\]
+
+Da wir oben gezeigt haben, dass $(A \mid A) \mid (B \mid B) = A \lor B$, ergibt sich:
+
+\[
+((A \lor B) \mid (A \lor B)) = \neg (A \lor B \land A \lor B) = \neg (A \lor B) 
+\]
+
+\textbf{Ergebnis}: Die Verknüpfung stellt die NOR-Operation $\neg (A \lor B)$ dar.
+
+\subsection*{(c)}
+
+\begin{enumerate}
+  \item $\neg A = A \mid A$
+  \item $A \land B = (A \mid B) \mid (A \mid B)$
+  \item $A \rightarrow B = (A \mid A) \mid B$
+  \item $A \leftrightarrow B = ((A \mid A) \mid B) \mid ((B \mid B) \mid A)$
+\end{enumerate}
+
+\section*{Aufgabe 4}
+
+\subsection*{Wahrheitstabelle für die fünf Interpretationen}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$A$ & $B$ & $C$ & $A \rightarrow (B \rightarrow C)$ & $(A \rightarrow B) \rightarrow C$ & $(A \land B) \rightarrow C$ & $A \rightarrow (B \land C)$ & $(A \rightarrow B) \land (B \rightarrow C)$ \\
+\hline
+W & W & W & W & W & W & W & W \\
+W & W & F & F & F & F & F & F \\
+W & F & W & W & W & W & F & W \\
+W & F & F & F & W & F & F & W \\
+F & W & W & W & W & W & W & W \\
+F & W & F & W & W & W & W & W \\
+F & F & W & W & W & W & W & W \\
+F & F & F & W & W & W & W & W \\
+\hline
+\end{tabular}
+
+\subsection*{Analyse der Unterschiede und Fazit}
+
+\begin{itemize}
+    \item \textbf{$A \rightarrow (B \rightarrow C)$}: Diese Interpretation entspricht einer Implikation, in der $B \rightarrow C$ der Folgerungsteil ist. Dies ergibt eine wahrheitswertabhängige Aussagekette, die dann wahr ist, wenn $A$ falsch ist oder die Implikation $B \rightarrow C$ wahr ist.
+    
+    \item \textbf{$(A \rightarrow B) \rightarrow C$}: Hier wird $A \rightarrow B$ als Prämisse genommen. Die gesamte Aussage ist nur dann falsch, wenn $C$ falsch ist und $A \rightarrow B$ wahr ist (d.h., $A$ wahr und $B$ falsch).
+    
+    \item \textbf{$(A \land B) \rightarrow C$}: Diese Interpretation setzt voraus, dass sowohl $A$ als auch $B$ wahr sein müssen, um $C$ zu implizieren. Dies ist eine stärkere Bedingung, da beide Prämissen erfüllt sein müssen, damit $C$ folgt.
+    
+    \item \textbf{$A \rightarrow (B \land C)$}: Hier muss $A$ wahr sein, um zu garantieren, dass $B$ und $C$ gleichzeitig wahr sind. Das ist eine andere Bedingung als die einfachen Implikationen.
+    
+    \item \textbf{$(A \rightarrow B) \land (B \rightarrow C)$}: Diese Interpretation bedeutet, dass sowohl $A$ $B$ impliziert als auch $B$ $C$ impliziert. Beide Bedingungen müssen separat wahr sein, was eine transitive Kette beschreibt.
+\end{itemize}
+
+\textbf{Fazit}: Die fünf Interpretationen ergeben je nach Wert von $A$, $B$ und $C$ unterschiedliche Wahrheitsergebnisse, insbesondere bei Kombinationen, bei denen die Implikation nicht eindeutig ist. Es ist daher sinnvoll, die Darstellung $A \rightarrow B \rightarrow C$ zu vermeiden und stattdessen die gewünschte Interpretation explizit auszuschreiben.
+
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
