@@ -1,0 +1,341 @@
+% ----------------------- TODO ---------------------------
+% Diese Daten müssen pro Blatt angepasst werden:
+\newcommand{\NUMBER}{4}
+\newcommand{\EXERCISES}{5}
+% Diese Daten müssen einmalig pro Vorlesung angepasst werden:
+\newcommand{\COURSE}{Diskrete Strukturen I}
+\newcommand{\TUTOR}{Jörg Bader}
+\newcommand{\STUDENTA}{Moritz Hahn}
+\newcommand{\STUDENTB}{}
+\newcommand{\STUDENTC}{}
+\newcommand{\DEADLINE}{09.11.2024}
+% ----------------------- TODO ---------------------------
+
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{forloop}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{fancybox}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float}
+\restylefloat{table}
+%Größe der Ränder setzen
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+
+%Kopf- und Fußzeile
+\pagestyle {fancy}
+\fancyhead[L]{Tutor: \TUTOR}
+\fancyhead[C]{\COURSE}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{}
+\fancyfoot[C]{} 
+\fancyfoot[R]{Seite \thepage /\pageref*{LastPage}}
+
+%Formatierung der Überschrift, hier nichts ändern
+\def\header#1#2{
+  \begin{center}
+    {\Large Übungsblatt #1}\\
+    {(Abgabetermin #2)}
+  \end{center}
+}
+
+%Definition der Punktetabelle, hier nichts ändern
+\newcounter{punktelistectr}
+\newcounter{punkte}
+\newcommand{\punkteliste}[2]{%
+  \setcounter{punkte}{#2}%
+  \addtocounter{punkte}{-#1}%
+  \stepcounter{punkte}%<-- also punkte = m-n+1 = Anzahl Spalten[1]
+  \begin{center}%
+  \begin{tabularx}{\linewidth}[]{@{}*{\thepunkte}{>{\centering\arraybackslash} X|}@{}>{\centering\arraybackslash}X}
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        \thepunktelistectr &
+      }
+      #2 &  $\Sigma$ \\
+      \hline
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        &
+      } &\\
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        &
+      } &\\
+    \end{tabularx}
+  \end{center}
+}
+
+\begin{document}
+
+\begin{tabularx}{\linewidth}{m{0.2 \linewidth}X}
+  \begin{minipage}{\linewidth}
+    \STUDENTA\\
+    \STUDENTB\\
+    \STUDENTC
+  \end{minipage} & \begin{minipage}{\linewidth}
+    \punkteliste{1}{\EXERCISES}
+  \end{minipage}\\
+\end{tabularx}
+
+\header{Nr. \NUMBER}{\DEADLINE}
+
+\section*{Aufgabe 1}
+
+\subsection*{(a)}
+\textbf{Lösung:} Die Summe der ersten \( n \) geraden Zahlen \( 2, 4, 6, \ldots, 2n \) kann als das Doppelte der Summe der ersten \( n \) natürlichen Zahlen geschrieben werden:
+\[
+\sum_{i=1}^n 2i = 2 \sum_{i=1}^n i.
+\]
+Nach der Gaußschen Summenformel für die Summe der ersten \( n \) natürlichen Zahlen gilt:
+\[
+\sum_{i=1}^n i = \frac{n(n+1)}{2}.
+\]
+Einsetzen ergibt:
+\[
+\sum_{i=1}^n 2i = 2 \cdot \frac{n(n+1)}{2} = n^2 + n.
+\]
+Damit ist die Aussage bewiesen.
+
+\subsection*{(b)}
+
+\textbf{Lösung:} Die Summe der ersten \( n \) ungeraden Zahlen ist \( 1, 3, 5, \ldots, (2n - 1) \). Es lässt sich durch direktes Aufschreiben und Summieren der Werte feststellen, dass:
+\[
+\sum_{i=1}^n (2i - 1) = n^2.
+\]
+Dies kann durch die Beobachtung bestätigt werden, dass jede zusätzliche ungerade Zahl eine vollständige Quadratzahl bildet. Alternativ kann man auch durch Induktion zeigen, dass die Summe der ersten \( n \) ungeraden Zahlen gleich \( n^2 \) ist.
+
+\section*{Aufgabe 2}
+
+\subsection*{(a)}
+Für \( n \in \mathbb{N} \) gilt:
+\[
+\sum_{i=1}^n i^2 = \frac{1}{6} n (n + 1) (2n + 1).
+\]
+\textbf{Beweis durch vollständige Induktion:}
+
+\textbf{Induktionsanfang:} Für \( n = 1 \):
+\[
+\sum_{i=1}^1 i^2 = 1 = \frac{1}{6} \cdot 1 \cdot 2 \cdot 3.
+\]
+
+\textbf{Induktionsvoraussetzung:} Angenommen, die Aussage gilt für ein \( n \in \mathbb{N} \), also
+\[
+\sum_{i=1}^n i^2 = \frac{1}{6} n (n + 1) (2n + 1).
+\]
+
+\textbf{Induktionsschritt:} Zeigen, dass die Aussage für \( n+1 \) gilt:
+\[
+\sum_{i=1}^{n+1} i^2 = \frac{1}{6} (n+1)(n+2)(2n+3).
+\]
+Erweitern der Summe ergibt:
+\[
+\sum_{i=1}^{n+1} i^2 = \sum_{i=1}^n i^2 + (n+1)^2.
+\]
+Einsetzen der Induktionsvoraussetzung liefert:
+\[
+\sum_{i=1}^{n+1} i^2 = \frac{1}{6} n (n + 1) (2n + 1) + (n+1)^2.
+\]
+Nun bringen wir die Terme auf einen gemeinsamen Nenner und vereinfachen:
+\[
+\sum_{i=1}^{n+1} i^2 = \frac{1}{6} (n+1)(n+2)(2n+3),
+\]
+was die Behauptung beweist.
+
+\subsection*{(b)}
+\textbf{Beweis durch vollständige Induktion:}
+
+\textbf{Induktionsanfang:} Für \( n = 1 \):
+\[
+\sum_{k=1}^1 \frac{k}{2^k} = \frac{1}{2} = 2 - \frac{3}{2}.
+\]
+
+\textbf{Induktionsvoraussetzung:} Angenommen, die Aussage gilt für ein \( n \in \mathbb{N} \), also
+\[
+\sum_{k=1}^n \frac{k}{2^k} = 2 - \frac{n + 2}{2^n}.
+\]
+
+\textbf{Induktionsschritt:} Zeigen, dass dann auch
+\[
+\sum_{k=1}^{n+1} \frac{k}{2^k} = 2 - \frac{n+3}{2^{n+1}}.
+\]
+Durch Hinzufügen des nächsten Terms ergibt sich:
+\[
+\sum_{k=1}^{n+1} \frac{k}{2^k} = \left(2 - \frac{n+2}{2^n}\right) + \frac{n+1}{2^{n+1}}.
+\]
+Durch Umformen und Zusammenfassen der Terme erhalten wir:
+\[
+\sum_{k=1}^{n+1} \frac{k}{2^k} = 2 - \frac{n+3}{2^{n+1}},
+\]
+womit die Induktionsbehauptung bewiesen ist.
+
+\subsection*{(d)}
+Für \( x \geq -1 \) und \( n \in \mathbb{N} \) gilt:
+\[
+(1 + x)^n \geq 1 + nx.
+\]
+\textbf{Beweis durch vollständige Induktion:}
+
+\textbf{Induktionsanfang:} Für \( n = 1 \) ist die Aussage offensichtlich wahr:
+\[
+(1 + x)^1 = 1 + x.
+\]
+
+\textbf{Induktionsvoraussetzung:} Angenommen, die Aussage gilt für ein \( n \), also \( (1 + x)^n \geq 1 + nx \).
+
+\textbf{Induktionsschritt:} Zeige die Aussage für \( n+1 \):
+\[
+(1 + x)^{n+1} = (1 + x)^n (1 + x) \geq (1 + nx)(1 + x).
+\]
+Durch Ausmultiplizieren und Anwendung der Induktionsvoraussetzung zeigt sich, dass \( (1 + x)^{n+1} \geq 1 + (n+1)x \).
+
+\subsection*{(e)}
+\textbf{Induktionsanfang:} Für \( n = 1 \) prüfen wir die Aussage:
+\[
+(1 + x)^1 = 1 + x.
+\]
+Da \( 1 + x = 1 + (2 \cdot 1 - 1) \cdot x \), ist die Aussage für \( n = 1 \) erfüllt.
+
+\textbf{Induktionsvoraussetzung:} Angenommen, die Aussage gilt für ein \( n \in \mathbb{N} \), d.h.
+\[
+(1 + x)^n \leq 1 + (2n - 1) \cdot x.
+\]
+
+\textbf{Induktionsschritt:} Zeigen, dass die Aussage dann auch für \( n+1 \) gilt, also:
+\[
+(1 + x)^{n+1} \leq 1 + (2(n+1) - 1) \cdot x = 1 + (2n + 1) \cdot x.
+\]
+Wir schreiben \( (1 + x)^{n+1} \) als
+\[
+(1 + x)^{n+1} = (1 + x)^n \cdot (1 + x).
+\]
+Anwendung der Induktionsvoraussetzung liefert:
+\[
+(1 + x)^{n+1} \leq \left( 1 + (2n - 1) \cdot x \right) \cdot (1 + x).
+\]
+Nun multiplizieren wir die rechte Seite aus:
+\[
+(1 + (2n - 1) \cdot x) \cdot (1 + x) = 1 + x + (2n - 1) \cdot x + (2n - 1) \cdot x^2.
+\]
+Da \( x \in [0, 1] \), folgt \( x^2 \leq x \). Damit können wir abschätzen:
+\[
+1 + x + (2n - 1) \cdot x + (2n - 1) \cdot x^2 \leq 1 + x + (2n - 1) \cdot x + (2n - 1) \cdot x = 1 + (2n + 1) \cdot x.
+\]
+Damit ist die Aussage auch für \( n+1 \) wahr, und der Beweis ist abgeschlossen.
+
+\section*{Aufgabe 3}
+
+Beachten wir, dass sich \( 1 + \frac{1}{k} = \frac{k+1}{k} \) schreiben lässt. Daher ergibt sich:
+\[
+f(n) = \prod_{k=1}^n \frac{k+1}{k}.
+\]
+Durch Ausmultiplizieren des Produkts erkennen wir, dass viele Terme im Zähler und Nenner wegfallen (Teleskopprodukt):
+\[
+f(n) = \frac{2}{1} \cdot \frac{3}{2} \cdot \frac{4}{3} \cdots \frac{n+1}{n} = \frac{n+1}{1} = n+1.
+\]
+Somit erhalten wir die explizite Formel:
+\[
+f(n) = n + 1.
+\]
+
+\subsection*{Beweis durch vollständige Induktion}
+\textbf{Induktionsanfang:} Für \( n = 1 \) ergibt sich:
+\[
+f(1) = 1 + 1 = 2,
+\]
+was mit der Formel \( f(n) = n + 1 \) übereinstimmt.
+
+\textbf{Induktionsvoraussetzung:} Angenommen, die Formel gilt für ein \( n \in \mathbb{N} \), also \( f(n) = n + 1 \).
+
+\textbf{Induktionsschritt:} Zeigen, dass dann auch \( f(n+1) = (n+1) + 1 = n + 2 \) gilt.
+\[
+f(n+1) = f(n) \cdot \left(1 + \frac{1}{n+1}\right).
+\]
+Nach Induktionsvoraussetzung ist \( f(n) = n + 1 \), sodass
+\[
+f(n+1) = (n+1) \cdot \frac{n+2}{n+1} = n + 2.
+\]
+Damit ist die Aussage bewiesen.
+
+\section*{Aufgabe 4}
+
+\subsection*{(a)}
+\begin{itemize}
+    \item Für \( n = 1 \) ergibt sich eine Gerade, die die Ebene in 2 Gebiete teilt, also \( e_1 = 2 \).
+    \item Für \( n = 2 \) schneiden zwei Geraden die Ebene in 4 Gebiete, also \( e_2 = 4 \).
+    \item Für \( n = 3 \) teilen drei Geraden die Ebene in 7 Gebiete, also \( e_3 = 7 \).
+    \item Für \( n = 4 \) teilen vier Geraden die Ebene in 11 Gebiete, also \( e_4 = 11 \).
+\end{itemize}
+
+\subsection*{(b) Rekursive Berechnungsvorschrift für \( e_{n+1} \)}
+Betrachten wir den Übergang von \( n \) zu \( n+1 \) Geraden. Die \( n+1 \)-te Gerade schneidet jede der \( n \) bestehenden Geraden genau einmal und fügt somit \( n+1 \) neue Gebiete hinzu. Daher gilt:
+\[
+e_{n+1} = e_n + (n + 1).
+\]
+
+\subsection*{(c) Beweis der expliziten Formel}
+Wir sollen zeigen, dass
+\[
+e_n = \frac{1}{2}n^2 + \frac{1}{2}n + 1.
+\]
+\textbf{Beweis durch vollständige Induktion:}
+
+\textbf{Induktionsanfang:} Für \( n = 1 \) ist
+\[
+e_1 = 2 = \frac{1}{2} \cdot 1^2 + \frac{1}{2} \cdot 1 + 1 = 2,
+\]
+was stimmt.
+
+\textbf{Induktionsvoraussetzung:} Angenommen, die Formel gilt für ein \( n \in \mathbb{N} \), also
+\[
+e_n = \frac{1}{2}n^2 + \frac{1}{2}n + 1.
+\]
+
+\textbf{Induktionsschritt:} Zeigen, dass dann auch \( e_{n+1} = \frac{1}{2}(n+1)^2 + \frac{1}{2}(n+1) + 1 \) gilt.
+Nach der rekursiven Beziehung aus Teil (b) gilt:
+\[
+e_{n+1} = e_n + (n+1).
+\]
+Durch Einsetzen der Induktionsvoraussetzung ergibt sich:
+\[
+e_{n+1} = \left(\frac{1}{2}n^2 + \frac{1}{2}n + 1\right) + (n+1).
+\]
+Durch Vereinfachung erhalten wir:
+\[
+e_{n+1} = \frac{1}{2}n^2 + \frac{1}{2}n + 1 + n + 1 = \frac{1}{2}n^2 + \frac{3}{2}n + 2.
+\]
+Nun schreiben wir \( \frac{1}{2}n^2 + \frac{3}{2}n + 2 \) um:
+\[
+e_{n+1} = \frac{1}{2}(n+1)^2 + \frac{1}{2}(n+1) + 1,
+\]
+was die Behauptung zeigt.
+
+\section*{Aufgabe 5: Fehlerhafter Beweis für Schnittpunkt aller Geraden}
+Der Fehler liegt darin, dass bei \( m + 1 \) Geraden nicht garantiert ist, dass sich alle in einem gemeinsamen Punkt schneiden, da allgemeine Lage paarweise nicht-parallele Geraden nicht notwendigerweise einen gemeinsamen Schnittpunkt haben.
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
