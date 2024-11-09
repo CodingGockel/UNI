@@ -1,0 +1,295 @@
+% ----------------------- TODO ---------------------------
+% Diese Daten müssen pro Blatt angepasst werden:
+\newcommand{\NUMBER}{3}
+\newcommand{\EXERCISES}{4}
+% Diese Daten müssen einmalig pro Vorlesung angepasst werden:
+\newcommand{\COURSE}{Diskrete Strukturen I}
+\newcommand{\TUTOR}{Jörg Bader}
+\newcommand{\STUDENTA}{Moritz Hahn}
+\newcommand{\STUDENTB}{}
+\newcommand{\STUDENTC}{}
+\newcommand{\DEADLINE}{02.11.2024}
+% ----------------------- TODO ---------------------------
+
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{forloop}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{fancybox}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float}
+\restylefloat{table}
+%Größe der Ränder setzen
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+
+%Kopf- und Fußzeile
+\pagestyle {fancy}
+\fancyhead[L]{Tutor: \TUTOR}
+\fancyhead[C]{\COURSE}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{}
+\fancyfoot[C]{} 
+\fancyfoot[R]{Seite \thepage /\pageref*{LastPage}}
+
+%Formatierung der Überschrift, hier nichts ändern
+\def\header#1#2{
+  \begin{center}
+    {\Large Übungsblatt #1}\\
+    {(Abgabetermin #2)}
+  \end{center}
+}
+
+%Definition der Punktetabelle, hier nichts ändern
+\newcounter{punktelistectr}
+\newcounter{punkte}
+\newcommand{\punkteliste}[2]{%
+  \setcounter{punkte}{#2}%
+  \addtocounter{punkte}{-#1}%
+  \stepcounter{punkte}%<-- also punkte = m-n+1 = Anzahl Spalten[1]
+  \begin{center}%
+  \begin{tabularx}{\linewidth}[]{@{}*{\thepunkte}{>{\centering\arraybackslash} X|}@{}>{\centering\arraybackslash}X}
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        \thepunktelistectr &
+      }
+      #2 &  $\Sigma$ \\
+      \hline
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        &
+      } &\\
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        &
+      } &\\
+    \end{tabularx}
+  \end{center}
+}
+
+\begin{document}
+
+\begin{tabularx}{\linewidth}{m{0.2 \linewidth}X}
+  \begin{minipage}{\linewidth}
+    \STUDENTA\\
+    \STUDENTB\\
+    \STUDENTC
+  \end{minipage} & \begin{minipage}{\linewidth}
+    \punkteliste{1}{\EXERCISES}
+  \end{minipage}\\
+\end{tabularx}
+
+\header{Nr. \NUMBER}{\DEADLINE}
+
+\section*{Aufgabe 1}
+
+\subsection*{a1)}
+Angenommen, \(\sqrt{3}\) wäre rational. Dann könnte man die Zahl als Bruch zweier teilerfremder ganzer Zahlen \(a\) und \(b\) schreiben:
+
+\[
+\sqrt{3} = \frac{a}{b}.
+\]
+
+Durch Quadrieren der Gleichung erhält man
+
+\[
+3 = \frac{a^2}{b^2}
+\]
+
+und daraus folgt
+
+\[
+3b^2 = a^2.
+\]
+Aber dann ist für eine ganze Zahl $p$ 
+\[
+a = 3p
+\]
+weil $b^{2}$ eine ganze Zahl ist und damit $\frac{a^{2}}{3}$ eine ganze Zahl sein muss und damit auch 3 als Teiler von $a$ existieren muss.\\
+Daraus folgt wieder:
+\[
+3 = 9\frac{p^{2}}{b^{2}} 
+\]
+also
+\[
+b^{2} = 3p^{2}
+\]
+Aber dann ist auch für eine ganze Zahl $q$
+\[
+b = 3q
+\]
+was einen Widerspruch bedeutet, weil $a$ und $b$ teilerfremd sind.
+\subsection*{a2)}
+Zuerst vereinfachen wir den Bruch \(\frac{48}{147}\):
+
+\begin{enumerate}
+    \item Der größte gemeinsame Teiler (ggT) von 48 und 147 ist 3.
+    \item Daher können wir den Bruch wie folgt kürzen:
+    \[
+    \frac{48}{147} = \frac{48 \div 3}{147 \div 3} = \frac{16}{49}
+    \]
+\end{enumerate}
+
+Somit ergibt sich:
+
+\[
+\sqrt{\frac{48}{147}} = \sqrt{\frac{16}{49}} = \frac{\sqrt{16}}{\sqrt{49}} = \frac{4}{7}
+\]
+
+Da \(\frac{4}{7}\) ein Bruch zweier ganzer Zahlen ist, handelt es sich um eine rationale Zahl.
+
+\textbf{Ergebnis:} \(\sqrt{\frac{48}{147}}\) ist rational.
+\subsection*{b)}
+\textit{Wenn \(x\) eine irrationale Zahl ist, dann ist auch \(\sqrt{x}\) irrational.}
+
+Um dies zu beweisen, verwenden wir die Kontraposition. Die Kontraposition der Aussage lautet:
+
+\textit{Wenn \(\sqrt{x}\) rational ist, dann ist auch \(x\) rational.}
+
+Dies bedeutet, dass wir zeigen müssen: Ist \(\sqrt{x}\) rational, dann folgt, dass \(x\) ebenfalls rational ist.
+
+\begin{enumerate}
+    \item Angenommen, \(\sqrt{x}\) ist rational.
+    \item Da \(\sqrt{x}\) rational ist, existieren zwei ganze Zahlen \(a\) und \(b\) (mit \(b \neq 0\)), sodass \(\sqrt{x} = \frac{a}{b}\).
+    \item Quadrieren wir beide Seiten der Gleichung, erhalten wir:
+    \[
+    x = \left( \frac{a}{b} \right)^2 = \frac{a^2}{b^2}
+    \]
+    \item Da \(a\) und \(b\) ganze Zahlen sind, ist \(a^2\) ebenfalls eine ganze Zahl, und \(b^2\) ist auch eine ganze Zahl. Daher ist \(\frac{a^2}{b^2}\) ein Bruch zweier ganzer Zahlen, was bedeutet, dass \(x\) rational ist.
+\end{enumerate}
+
+Damit haben wir gezeigt, dass, wenn \(\sqrt{x}\) rational ist, auch \(x\) rational sein muss. Dies ist genau die Kontraposition der ursprünglichen Aussage.
+
+Die Aussage „Wenn \(x\) irrational ist, dann ist \(\sqrt{x}\) irrational“ ist damit bewiesen.
+\section*{Aufgabe 2}
+\subsection*{a)}
+Betrachten wir die Paare von Zahlen, deren Summe 20 ergibt:
+
+\[
+(1, 19), (2, 18), (3, 17), (4, 16), (5, 15), (6, 14), (7, 13), (8, 12), (9, 11), (10, 10)
+\]
+
+Es gibt also insgesamt 9 Paare von Zahlen (jeweils bestehend aus zwei verschiedenen Zahlen), deren Summe 20 ergibt, und ein Paar \((10, 10)\), das nur aus der Zahl 10 besteht.
+
+Nun wählen wir 11 verschiedene Zahlen aus den Zahlen von 1 bis 19 aus. Nach dem Schubfachprinzip müssen mindestens zwei der gewählten Zahlen in einem der Paare liegen, da wir insgesamt nur 9 Paare haben, aber 11 Zahlen auswählen.
+
+Somit gibt es mindestens ein Paar unter den ausgewählten Zahlen, dessen Summe 20 ergibt.
+
+\textbf{Ergebnis:} Es existieren zwei Zahlen unter den elf gewählten Zahlen, deren Summe 20 ist.
+\subsection*{b)}
+Es gibt insgesamt 8 Summen, die berechnet werden müssen: 3 für die Zeilen, 3 für die Spalten und 2 für die Diagonalen.
+
+Da jeder Eintrag der Tabelle \(-1\), \(0\) oder \(1\) ist, kann die Summe einer Zeile, Spalte oder Diagonale nur Werte von \(-3\) bis \(3\) annehmen. Damit gibt es insgesamt nur 7 mögliche Werte für jede Summe: \(-3, -2, -1, 0, 1, 2, 3\).
+
+Da wir 8 Summen berechnen, aber nur 7 verschiedene mögliche Werte haben, folgt nach dem Schubfachprinzip, dass mindestens einer dieser Werte mindestens zweimal auftreten muss.
+
+\textbf{Ergebnis:} Es tritt mindestens eine Summe mindestens zweimal auf.
+\subsection*{c)}
+Da niemand vor seinem eigenen Namensschild sitzt, gibt es eine sogenannte \emph{fehlende Fixpunktanordnung} (eine Permutation ohne Fixpunkte), auch „Derangement“ genannt. Bei einer solchen Anordnung sitzen keine Personen vor ihrem eigenen Namensschild.
+
+Wenn wir den Tisch um eine bestimmte Anzahl von Plätzen drehen, handelt es sich mathematisch um eine zyklische Permutation der Sitzordnung. Da es 2024 Personen gibt, gibt es 2024 mögliche Drehungen.
+
+Betrachten wir die 2024 Drehungen: Jede Person könnte theoretisch genau einmal ihr Namensschild vor sich haben. Wenn wir jedoch versuchen, jede Person genau einmal zu ihrem eigenen Namensschild zu bringen, erhalten wir eine Fixpunktanordnung (in der jeder seinen eigenen Platz hat) – dies ist aber nach der Aufgabenstellung nicht erlaubt. 
+
+Somit folgt, dass bei mindestens einer der Drehungen mindestens zwei Personen ihr eigenes Namensschild vor sich haben müssen.
+
+\textbf{Ergebnis:} Man kann den Tisch so drehen, dass mindestens zwei Personen ihr richtiges Namensschild vor sich haben.
+\section*{Aufgabe 4}
+\subsection*{a)}
+Es gibt insgesamt \(145\) Studierende und \(6\) Übungsgruppen. Um zu berechnen, wie viele Studierende mindestens in der Übungsgruppe mit den meisten Eintragungen sein müssen, wenden wir das Schubfachprinzip an.
+
+Da die Studierenden auf \(6\) Übungsgruppen verteilt sind, ergibt sich die durchschnittliche Gruppengröße als:
+\[
+\frac{145}{6} \approx 24{,}17
+\]
+
+Da die Gruppengröße eine ganze Zahl sein muss, nehmen wir die nächstgrößere ganze Zahl:
+\[
+\left\lceil \frac{145}{6} \right\rceil = 25
+\]
+
+Nach dem Schubfachprinzip muss also mindestens eine Übungsgruppe \(25\) oder mehr Studierende enthalten.
+
+\textbf{Ergebnis:} Mindestens \(25\) Studierende sind in der Übungsgruppe mit den meisten Studierenden eingetragen.
+
+\subsection*{b)}
+\begin{enumerate}
+  \item \textbf{Geburtstage in einem Monat:} Das Jahr \(2024\) hat \(366\) Tage, und es sind insgesamt \(145\) Studierende eingeschrieben. Da es \(12\) Monate gibt, müssen die Geburtstage der Studierenden auf diese \(12\) Monate verteilt werden.
+
+  Die durchschnittliche Anzahl der Geburtstage pro Monat beträgt:
+  \[
+  \frac{145}{12} \approx 12{,}08
+  \]
+
+  Nach dem Schubfachprinzip bedeutet dies, dass in mindestens einem Monat mindestens \(13\) Studierende Geburtstag haben müssen. Da in der Übungsgruppe mit den meisten Studierenden mindestens \(25\) Personen sind, muss es auch in dieser Gruppe mindestens einen Monat geben, in dem mindestens \(5\) Studierende Geburtstag haben.
+
+  \textbf{Ergebnis:} Es gibt mindestens einen Monat, in dem die Geburtstage von mindestens \(5\) der Studierenden dieser Übungsgruppe liegen müssen.
+  
+  \item \textbf{Studierende zur Prüfung angemeldet:} Es sind insgesamt \(13\) Studierende zur Prüfung angemeldet. Da die Studierenden auf \(6\) Übungsgruppen verteilt sind, ergibt sich die durchschnittliche Anzahl an Prüfungsanmeldungen pro Gruppe:
+  \[
+  \frac{13}{6} \approx 2{,}17
+  \]
+
+  Nach dem Schubfachprinzip muss mindestens eine Übungsgruppe mindestens \(3\) zur Prüfung angemeldete Studierende enthalten.
+
+  \textbf{Ergebnis:} In der größten Übungsgruppe sind mindestens \(3\) Studierende zur Prüfung angemeldet.
+\end{enumerate}
+\subsection*{c)}
+Die Punktzahl, die jeder der \(114\) Studierenden in der Übungsserie \(1\) erreicht hat, liegt zwischen \(4\) und \(15\) Punkten. Das bedeutet, es gibt insgesamt \(12\) mögliche unterschiedliche Punktzahlen (\(4, 4.5, 5, \dots, 15\)), da auch halbe Punkte vergeben wurden.
+
+Wenden wir das Schubfachprinzip an, indem wir die Studierenden als Objekte und die \(12\) möglichen Punktzahlen als Behälter betrachten. Dann ergibt sich:
+\[
+\frac{114}{12} \approx 9{,}5
+\]
+
+Nach dem Schubfachprinzip muss mindestens eine Punktzahl von \(\left\lceil 9.5 \right\rceil = 10\) Studierenden erreicht worden sein.
+
+\textbf{Ergebnis:} Mindestens \(10\) Studierende haben in Übungsserie \(1\) dieselbe positive Punktzahl erreicht.
+
+\subsection*{d)}
+\begin{enumerate}
+  \item \textbf{Aussage 1:} Mindestens zwei Studierende haben im selben Monat Geburtstag.
+  \item \textbf{Begründung:}
+  \item \begin{itemize}
+    \item \textbf{Objekte:} 145 Studierende (jeder hat einen Geburtstag).
+    \item \textbf{Behälter:} 12 Monate.
+  \end{itemize}
+  Da wir 145 Studierende (Objekte) und nur 12 Monate (Behälter) haben, können wir das Schubfachprinzip anwenden. Es folgt, dass mindestens ein Monat mindestens \(\left\lceil \frac{145}{12} \right\rceil = 13\) Geburtstage enthalten muss. Somit müssen mindestens zwei Studierende an einem Tag im selben Monat Geburtstag haben, da jeder Monat im Jahr mindestens einen Tag hat.
+  \item \textbf{Aussage 2:}Mindestens eine Übungsgruppe hat mindestens 25 Studierende.
+  \item \textbf{Begründung:}
+  \begin{itemize}
+    \item \textbf{Objekte:} 145 Studierende (alle Studierenden sind einer Übungsgruppe zugeordnet).
+    \item \textbf{Behälter:} 6 Übungsgruppen.
+\end{itemize}
+
+Da es 145 Studierende gibt, die gleichmäßig auf 6 Übungsgruppen verteilt sind, wenden wir das Schubfachprinzip an. Die durchschnittliche Anzahl von Studierenden pro Gruppe ist:
+\[
+\frac{145}{6} \approx 24.17
+\]
+Da die Anzahl der Studierenden in jeder Übungsgruppe eine ganze Zahl sein muss, muss es mindestens eine Übungsgruppe geben, die mindestens \(\left\lceil 24.17 \right\rceil = 25\) Studierende enthält. 
+\end{enumerate}
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
