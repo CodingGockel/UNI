@@ -1,0 +1,193 @@
+% ----------------------- TODO ---------------------------
+% Diese Daten müssen pro Blatt angepasst werden:
+\newcommand{\NUMBER}{5}
+\newcommand{\EXERCISES}{3}
+% Diese Daten müssen einmalig pro Vorlesung angepasst werden:
+\newcommand{\COURSE}{Diskrete Strukturen I}
+\newcommand{\TUTOR}{Jörg Bader}
+\newcommand{\STUDENTA}{Moritz Hahn}
+\newcommand{\STUDENTB}{}
+\newcommand{\STUDENTC}{}
+\newcommand{\DEADLINE}{16.11.2024}
+% ----------------------- TODO ---------------------------
+
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{forloop}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{fancybox}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float}
+\restylefloat{table}
+%Größe der Ränder setzen
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+
+%Kopf- und Fußzeile
+\pagestyle {fancy}
+\fancyhead[L]{Tutor: \TUTOR}
+\fancyhead[C]{\COURSE}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{}
+\fancyfoot[C]{} 
+\fancyfoot[R]{Seite \thepage /\pageref*{LastPage}}
+
+%Formatierung der Überschrift, hier nichts ändern
+\def\header#1#2{
+  \begin{center}
+    {\Large Übungsblatt #1}\\
+    {(Abgabetermin #2)}
+  \end{center}
+}
+
+%Definition der Punktetabelle, hier nichts ändern
+\newcounter{punktelistectr}
+\newcounter{punkte}
+\newcommand{\punkteliste}[2]{%
+  \setcounter{punkte}{#2}%
+  \addtocounter{punkte}{-#1}%
+  \stepcounter{punkte}%<-- also punkte = m-n+1 = Anzahl Spalten[1]
+  \begin{center}%
+  \begin{tabularx}{\linewidth}[]{@{}*{\thepunkte}{>{\centering\arraybackslash} X|}@{}>{\centering\arraybackslash}X}
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        \thepunktelistectr &
+      }
+      #2 &  $\Sigma$ \\
+      \hline
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        &
+      } &\\
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        &
+      } &\\
+    \end{tabularx}
+  \end{center}
+}
+
+\begin{document}
+
+\begin{tabularx}{\linewidth}{m{0.2 \linewidth}X}
+  \begin{minipage}{\linewidth}
+    \STUDENTA\\
+    \STUDENTB\\
+    \STUDENTC
+  \end{minipage} & \begin{minipage}{\linewidth}
+    \punkteliste{1}{\EXERCISES}
+  \end{minipage}\\
+\end{tabularx}
+
+\header{Nr. \NUMBER}{\DEADLINE}
+
+\section*{Aufgabe 1:}
+
+\subsection*{(a) Drei Mengen \( A, B, C \)}
+Die möglichen Regionen im Venn-Diagramm mit drei Mengen lassen sich wie folgt notieren:
+\begin{enumerate}
+    \item Nur in \( A \): \( A \setminus (B \cup C) \)
+    \item Nur in \( B \): \( B \setminus (A \cup C) \)
+    \item Nur in \( C \): \( C \setminus (A \cup B) \)
+    \item In \( A \cap B \), aber nicht in \( C \): \( (A \cap B) \setminus C \)
+    \item In \( A \cap C \), aber nicht in \( B \): \( (A \cap C) \setminus B \)
+    \item In \( B \cap C \), aber nicht in \( A \): \( (B \cap C) \setminus A \)
+    \item In \( A \cap B \cap C \): \( A \cap B \cap C \)
+    \item Außerhalb aller Mengen: \( \overline{A \cup B \cup C} \)
+\end{enumerate}
+
+\subsection*{(b) Vier Mengen \( A, B, C, D \)}
+Die fehlenden Regionen im Venn-Diagramm mit vier Mengen lauten:
+\begin{enumerate}
+    \item Nur in \( A \) und \( D \): \( (A \cap D) \setminus (B \cup C) \)
+    \item Nur in \( B \) und \( D \): \( (B \cap D) \setminus (A \cup C) \)
+    \item Nur in \( C \) und \( D \): \( (C \cap D) \setminus (A \cup B) \)
+    \item In allen vier Mengen: \( A \cap B \cap C \cap D \)
+\end{enumerate}
+
+\section*{Aufgabe 2:}
+
+\subsection*{(a) \( A \cup B = A \cap B \)}
+\textbf{Behauptung:} Falsch. \\
+\textbf{Gegenbeispiel:} Sei \( A = \{1\} \), \( B = \{2\} \). Dann ist:
+\[
+A \cup B = \{1, 2\}, \quad A \cap B = \emptyset.
+\]
+Also gilt \( A \cup B \neq A \cap B \).
+
+\subsection*{(b) \( A \cap (B \cup C) = (A \cap B) \cup C \)}
+\textbf{Behauptung:} Falsch. \\
+\textbf{Gegenbeispiel:} Sei \( A = \{1\} \), \( B = \{2\} \), \( C = \{3\} \). Dann:
+\[
+A \cap (B \cup C) = \emptyset, \quad (A \cap B) \cup C = \{3\}.
+\]
+Daher \( A \cap (B \cup C) \neq (A \cap B) \cup C \).
+
+\subsection*{(c) \( A \cup B = A \cap B \iff A = B \)}
+\textbf{Behauptung:} Wahr. \\
+\textbf{Beweis:} \( A \cup B = A \cap B \) bedeutet:
+\[
+x \in A \cup B \Leftrightarrow x \in A \cap B.
+\]
+Das impliziert \( x \in A \Leftrightarrow x \in B \), also \( A = B \).
+
+\subsection*{(d) \( A \cup (B \cap C) = (A \cup B) \cap (A \cup C) \)}
+\textbf{Behauptung:} Wahr. \\
+\textbf{Beweis:} Zeige Äquivalenz der beiden Seiten:
+\begin{align*}
+\text{Links: } & x \in A \cup (B \cap C) \Leftrightarrow x \in A \vee (x \in B \wedge x \in C), \\
+\text{Rechts: } & x \in (A \cup B) \cap (A \cup C) \Leftrightarrow (x \in A \vee x \in B) \wedge (x \in A \vee x \in C).
+\end{align*}
+Beide Aussagen sind identisch.
+
+\subsection*{(e) \( (A \cup B) \cap (B \cup C) \cap (C \cup A) = (A \cap B) \cup (B \cap C) \cup (C \cap A) \)}
+\textbf{Behauptung:} Wahr. \\
+\textbf{Beweis:} Durch Anwendung des Distributivgesetzes zeigt sich, dass beide Seiten äquivalent sind.
+
+\subsection*{(f) \( P(A) \cap P(B) = P(A \cap B) \iff A \subseteq B \lor B \subseteq A \lor A \cap B = \emptyset \)}
+\textbf{Behauptung:} Wahr. \\
+\textbf{Beweis:} Die Potenzmengen \( P(A) \cap P(B) \) und \( P(A \cap B) \) stimmen nur überein, wenn eine der genannten Bedingungen erfüllt ist.
+
+\section*{Aufgabe 3:}
+
+Zeige, dass die Aussagen äquivalent sind:
+\begin{enumerate}
+    \item \( M \subseteq N \),
+    \item \( M \cup N = N \),
+    \item \( M \cap N = M \).
+\end{enumerate}
+
+\textbf{Beweis:}
+\begin{itemize}
+    \item \( M \subseteq N \Rightarrow M \cup N = N \): \\
+    Elemente von \( M \) sind in \( N \), also ergänzt \( M \) nichts.
+    \item \( M \cup N = N \Rightarrow M \cap N = M \): \\
+    Elemente von \( M \) sind in \( N \), daher ist \( M \cap N = M \).
+    \item \( M \cap N = M \Rightarrow M \subseteq N \): \\
+    Jedes Element von \( M \) liegt in \( N \), also \( M \subseteq N \).
+\end{itemize}
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
