@@ -1,0 +1,268 @@
+% ----------------------- TODO ---------------------------
+% Diese Daten müssen pro Blatt angepasst werden:
+\newcommand{\NUMBER}{6}
+\newcommand{\EXERCISES}{5}
+% Diese Daten müssen einmalig pro Vorlesung angepasst werden:
+\newcommand{\COURSE}{Diskrete Strukturen I}
+\newcommand{\TUTOR}{Jörg Bader}
+\newcommand{\STUDENTA}{Moritz Hahn}
+\newcommand{\STUDENTB}{}
+\newcommand{\STUDENTC}{}
+\newcommand{\DEADLINE}{23.11.2024}
+% ----------------------- TODO ---------------------------
+
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{forloop}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{fancybox}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float}
+\restylefloat{table}
+%Größe der Ränder setzen
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+
+%Kopf- und Fußzeile
+\pagestyle {fancy}
+\fancyhead[L]{Tutor: \TUTOR}
+\fancyhead[C]{\COURSE}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{}
+\fancyfoot[C]{} 
+\fancyfoot[R]{Seite \thepage /\pageref*{LastPage}}
+
+%Formatierung der Überschrift, hier nichts ändern
+\def\header#1#2{
+  \begin{center}
+    {\Large Übungsblatt #1}\\
+    {(Abgabetermin #2)}
+  \end{center}
+}
+
+%Definition der Punktetabelle, hier nichts ändern
+\newcounter{punktelistectr}
+\newcounter{punkte}
+\newcommand{\punkteliste}[2]{%
+  \setcounter{punkte}{#2}%
+  \addtocounter{punkte}{-#1}%
+  \stepcounter{punkte}%<-- also punkte = m-n+1 = Anzahl Spalten[1]
+  \begin{center}%
+  \begin{tabularx}{\linewidth}[]{@{}*{\thepunkte}{>{\centering\arraybackslash} X|}@{}>{\centering\arraybackslash}X}
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        \thepunktelistectr &
+      }
+      #2 &  $\Sigma$ \\
+      \hline
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        &
+      } &\\
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        &
+      } &\\
+    \end{tabularx}
+  \end{center}
+}
+
+\begin{document}
+
+\begin{tabularx}{\linewidth}{m{0.2 \linewidth}X}
+  \begin{minipage}{\linewidth}
+    \STUDENTA\\
+    \STUDENTB\\
+    \STUDENTC
+  \end{minipage} & \begin{minipage}{\linewidth}
+    \punkteliste{1}{\EXERCISES}
+  \end{minipage}\\
+\end{tabularx}
+
+\header{Nr. \NUMBER}{\DEADLINE}
+
+\section*{Aufgabe 1:}
+
+\subsection*{(a)}
+Die Elemente der Menge \( X \times Y \) sind:
+\[
+X \times Y = \{(a, 1), (a, 2), (a, 3), (a, 4), (a, 5), (b, 1), (b, 2), \dots, (e, 5)\}.
+\]
+Insgesamt gibt es \( |X| \cdot |Y| = 5 \cdot 5 = 25 \) Elemente.
+
+\subsection*{(b)}
+Die Potenzmenge \( P(X \times Y) \) hat \( 2^{|X \times Y|} \) Elemente. Da \( |X \times Y| = 25 \), ergibt sich:
+\[
+|P(X \times Y)| = 2^{25}.
+\]
+
+\subsection*{(c)}
+\begin{itemize}
+    \item \textbf{Funktionen:} Für \( f : X \to Y \) gibt es \( |Y|^{|X|} = 5^5 \) Möglichkeiten:
+    \[
+    5^5 = 3125.
+    \]
+
+    \item \textbf{Injektionen:} Eine injektive Funktion ist eine Anordnung von \( |X| = 5 \) Elementen auf \( |Y| = 5 \) Plätzen:
+    \[
+    P(5, 5) = 5! = 120.
+    \]
+
+    \item \textbf{Surjektionen:} Für surjektive Funktionen verwenden wir die Inklusions-Exklusionsformel:
+    \[
+    S(5, 5) = \sum_{k=0}^5 (-1)^k \binom{5}{k} (5-k)^5 = 120.
+    \]
+
+    \item \textbf{Bijektionen:} Eine Funktion ist bijektiv, wenn sie sowohl injektiv als auch surjektiv ist. Es gibt:
+    \[
+    5! = 120 \text{ Bijektionen.}
+    \]
+\end{itemize}
+
+\subsection*{(d)}
+Solche Bijektionen entsprechen involutorischen Permutationen, die nur aus Zyklen der Länge 1 oder 2 bestehen. Für \( |X| = 5 \) gilt:
+\[
+\sum_{k=0}^{\lfloor n/2 \rfloor} \frac{n!}{k! \cdot (n-2k)! \cdot 2^k}.
+\]
+Für \( n = 5 \) ergibt dies:
+\[
+15 \text{ involutorische Bijektionen.}
+\]
+
+\section*{Aufgabe 2:}
+Eine Funktion \( f : X \to Y \) entspricht der Relation:
+\[
+\{(x, f(x)) \mid x \in X\}.
+\]
+Diese Relation hat folgende Eigenschaften:
+\begin{itemize}
+    \item Sie ist \textbf{linkstotal}, da jedes \( x \in X \) einem Wert in \( Y \) zugeordnet wird.
+    \item Sie ist \textbf{rechtseindeutig}, da jedes \( x \in X \) höchstens einem Wert in \( Y \) zugeordnet wird.
+\end{itemize}
+
+\subsection*{Injektive Funktionen}
+Eine Relation ist injektiv, wenn keine zwei Tupel denselben zweiten Wert besitzen.
+
+\subsection*{Surjektive Funktionen}
+Eine Relation ist surjektiv, wenn jedes \( y \in Y \) in mindestens einem Tupel auftritt.
+
+\section*{Aufgabe 3:}
+Gegeben ist die Relation:
+\[
+R = \{(1, 1), (2, 1), (2, 3), (3, 2)\}.
+\]
+
+\subsection*{(a)}
+Eine Äquivalenzrelation ist reflexiv, symmetrisch und transitiv:
+\begin{itemize}
+    \item \textbf{Reflexivität:} Ergänzen der Paare \((x, x)\) für \( x \in \{4, 5\} \): 
+    \[
+    R_1 = \{(4, 4), (5, 5)\}.
+    \]
+    \item \textbf{Symmetrie:} Ergänzen der Paare \((1, 2), (3, 2), (2, 1)\).
+    \item \textbf{Transitivität:} Ergänzen der Paare \((2, 2), (3, 1)\).
+\end{itemize}
+Die finale Relation ist:
+\[
+R \cup R_1 = \{(1, 1), (2, 1), (1, 2), (2, 2), (2, 3), (3, 2), (3, 1), (4, 4), (5, 5)\}.
+\]
+
+\subsection*{(b)}
+Eine Halbordnungsrelation ist reflexiv, antisymmetrisch und transitiv:
+\begin{itemize}
+    \item \textbf{Reflexivität:} Ergänzen der Paare \((4, 4), (5, 5)\):
+    \[
+    R_2 = \{(4, 4), (5, 5)\}.
+    \]
+    \item \textbf{Antisymmetrie:} Es sind keine widersprüchlichen Paare vorhanden.
+    \item \textbf{Transitivität:} Ergänzen des Paares \((3, 1)\).
+\end{itemize}
+Die finale Relation ist:
+\[
+R \cup R_2 = \{(1, 1), (2, 1), (2, 2), (2, 3), (3, 3), (3, 1), (4, 4), (5, 5)\}.
+\]
+
+\subsection*{(c)}
+\begin{itemize}
+    \item \textbf{Transitivität:} Ergänzen der Paare \((3, 1), (2, 2), (3, 3)\).
+    \item \textbf{Nicht asymmetrisch:} Ergänzen des Paares \((1, 2)\).
+\end{itemize}
+Die finale Relation ist:
+\[
+R \cup R_3 = \{(1, 1), (2, 1), (1, 2), (2, 3), (3, 2), (3, 1), (3, 3)\}.
+\]
+
+\subsection*{(d)}
+\begin{itemize}
+    \item \textbf{Nicht reflexiv:} Entfernen des Paares \((1, 1)\).
+    \item \textbf{Nicht transitiv:} Keine Ergänzung transitiver Paare wie \((2, 2)\) oder \((3, 1)\).
+\end{itemize}
+Die finale Relation ist:
+\[
+R \cup R_4 = \{(2, 1), (2, 3), (3, 2)\}.
+\]
+
+\section*{Aufgabe 4:}
+
+\subsection*{(a)}
+\begin{itemize}
+    \item \textbf{Symmetrie:} Wenn \((a, b) \in R\), dann auch \((b, a) \in R\).
+    \item \textbf{Antisymmetrie:} Wenn \((a, b) \in R\) und \((b, a) \in R\), dann gilt \( a = b \).
+\end{itemize}
+Wegen Antisymmetrie bleibt nur \( a = b \). Reflexivität folgt aus \( a = b \). Somit gilt für \((a, b), (b, c) \in R\), dass auch \((a, c) \in R\).  
+\textbf{Folgerung:} \( R \) ist transitiv.
+
+\subsection*{(b)}
+Zu zeigen: \((R \circ S) \circ T = R \circ (S \circ T)\).  
+Sei \( x \in (R \circ S) \circ T \). Dann existieren \( y, z \) mit:
+\[
+(x, y) \in R, \ (y, z) \in S, \ (z, w) \in T.
+\]
+Analog gilt für \( R \circ (S \circ T) \). Die Assoziativität folgt aus der Definition des Relationenprodukts.
+
+\subsection*{(c)}
+Sei \( (a, b) \in (R \circ S)^{-1} \). Dann gilt:
+\[
+(b, a) \in R \circ S \Rightarrow \exists c: (b, c) \in R, \ (c, a) \in S.
+\]
+Das bedeutet:
+\[
+(a, c) \in S^{-1}, \ (c, b) \in R^{-1}.
+\]
+Somit ist \( (a, b) \in S^{-1} \circ R^{-1} \).
+
+\section*{Aufgabe 5:}
+
+\subsection*{(a)}
+\( F \cap G \) ist nur dann eine Funktion, wenn \( F(x) = G(x) \) für alle \( x \in \text{Dom}(F) \cap \text{Dom}(G) \).  
+\textbf{Definitionsmenge:} \( \{x \in X \mid F(x) = G(x)\} \).
+
+\subsection*{(b)}
+\( F \cup G \) ist nur dann eine Funktion, wenn \( F(x) = G(x) \) für alle \( x \in \text{Dom}(F) \cap \text{Dom}(G) \).  
+\textbf{Definitionsmenge:} \( \text{Dom}(F) \cup \text{Dom}(G) \).
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
